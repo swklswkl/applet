@@ -1,0 +1,30 @@
+<!--头部start-->
+<view class="header-dw">
+  <view class="header-location">
+    <image src="/icon/home＿location.png" class="location-icon"></image>
+  </view>
+  <view class="header-address">
+    <text>剑川路</text>
+  </view>
+  <view class="header-message">
+    <image src="/icon/news_none.png" class="message-icon"></image>
+  </view>
+</view>
+<!--头部end-->
+<!--轮播图start-->
+<swiper  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+  <block wx:for="{{indexInfo.banner}}">  
+    <swiper-item> 
+      <navigator url="{{item.advpic}}" hover-class="navigator-hover">  
+        <image src="{{imgPath+item.advpic}}" class="slide-image"/>  
+      </navigator>   
+    </swiper-item>  
+  </block>
+  <!--搜索-->
+  <view class="">
+    <image src="/icon/search1.png" class="search-icon"></image>
+    <input type="text" name='search' placeholder-class="placeholder-font" placeholder="请输入诊所诊所或牙医名称" class="search"/>
+  </view>
+  <!--搜索-->  
+</swiper>
+<!--轮播图end-->  
