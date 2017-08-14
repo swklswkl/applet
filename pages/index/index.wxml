@@ -28,3 +28,22 @@
   <!--搜索-->  
 </swiper>
 <!--轮播图end-->  
+<!--十个小图标-->
+<view class="content_icon">
+  <block wx:for="{{indexInfo.icon}}" >
+    <view class="list-icon"> 
+     <image src="{{iconPath+item.icon_image}}" class=""></image>
+     <text>{{item.icon}}</text>
+    </view>
+  </block>
+  <view class="common_sense">
+    <view class="sense_icon">
+      <image src="/icon/doctor.png" class="img1"></image>
+      <image src="/icon/little knowledge.png" class="img2"></image>  
+    </view>
+    <block wx:for="{{indexInfo.title}}">
+      <text class="sense_title">{{item.title}}</text>
+    </block>
+  </view>
+</view>
+<!--十个小图标-->

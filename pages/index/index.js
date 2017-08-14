@@ -5,10 +5,11 @@ Page({
   data: {
     userInfo: {},
     imgPath: 'https://www.eeboo.cn/uploads/',
+    iconPath: 'http://www.yyaai.com/uploads/icons/',
   },
   
   tapName: function(event) {
-    console.log(event)
+    //console.log(event)
   },
 
   //事件处理函数
