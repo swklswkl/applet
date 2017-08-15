@@ -4,7 +4,7 @@
     <image src="/icon/home＿location.png" class="location-icon"></image>
   </view>
   <view class="header-address">
-    <text>剑川路</text>
+    <text>剑川路2</text>
   </view>
   <view class="header-message">
     <image src="/icon/news_none.png" class="message-icon"></image>
@@ -41,9 +41,13 @@
       <image src="/icon/doctor.png" class="img1"></image>
       <image src="/icon/little knowledge.png" class="img2"></image>  
     </view>
-    <block wx:for="{{indexInfo.title}}">
-      <text class="sense_title">{{item.title}}</text>
-    </block>
+    <scroll-view scroll-y="true" class="sense_title">
+      <block wx:for="{{indexInfo.title}}">
+       
+        <view class="title">{{item.title}}</view>  
+     
+      </block>
+    </scroll-view>
   </view>
 </view>
 <!--十个小图标-->
