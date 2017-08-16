@@ -24,7 +24,8 @@ App({
   },
 
   globalData: {
-    userInfo: null
+    userInfo: null,
+    myWebsite:'https://www.eeboo.cn/',
 
   },
   mdkey:function() {

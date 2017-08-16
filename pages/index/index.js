@@ -20,7 +20,7 @@ Page({
   //加载页面
   onLoad: function () {
     var that = this;
-    var myWebsite = 'https://www.eeboo.cn/';
+    var myWebsite = app.globalData.myWebsite;
     //调用应用实例的方法获取全局数
     app.getUserInfo(function (userInfo, Data) {
       //更新数据
@@ -28,7 +28,7 @@ Page({
         userInfo: userInfo
 
       })
-    }),
+    })
     //获取当前的地理位置
       wx.getLocation({
         type:'gcj02',
@@ -50,13 +50,13 @@ Page({
                 that.setData({
                   address:address,
                   lat: latitude,
-                  long: longitude
+                  lng: longitude
                 })
               }
             }
           })
         }
-      }),
+      })
     //请求首页接口
     wx.request({
       url: myWebsite+'appNewCustomer/Index/index',
@@ -72,13 +72,23 @@ Page({
           })
         }
       }
-    }),
+    })
+    //req1 = new object();
+   /* req1 = {
+      lng: lng,
+      lat: lat,
+      count: 10,
+      start: 1,
+    };
+    console.log(req1)*/
     wx.request({
       url: myWebsite + 'appNewCustomer/Index/nearClinic',
       method:'POST',
       data:{
-        lng:long,
+        lng:lng,
         lat:lat,
+        count:'',
+        start:'',
         mdkey:'',
       },
       success: function (res) {
