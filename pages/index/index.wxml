@@ -1,18 +1,18 @@
 <!--头部start-->
 <view class="header-dw">
   <view class="header-location">
-    <image src="/icon/home＿location.png" class="location-icon"></image>
+    <image src="/image/icon/home＿location.png" class="location-icon"></image>
   </view>
   <view class="header-address">
-    <text>剑川路2</text>
+    <text>{{address}}</text>
   </view>
   <view class="header-message">
-    <image src="/icon/news_none.png" class="message-icon"></image>
+    <image src="/image/icon/news_none.png" class="message-icon"></image>
   </view>
 </view>
 <!--头部end-->
 <!--轮播图start-->
-<swiper  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+<swiper  autoplay="true" interval="2000" duration="1000">  
   <block wx:for="{{indexInfo.banner}}">  
     <swiper-item> 
       <navigator url="{{item.advpic}}" hover-class="navigator-hover">  
@@ -22,7 +22,7 @@
   </block>
   <!--搜索-->
   <view class="">
-    <image src="/icon/search1.png" class="search-icon"></image>
+    <image src="/image/icon/search1.png" class="search-icon"></image>
     <input type="text" name='search' placeholder-class="placeholder-font" placeholder="请输入诊所诊所或牙医名称" class="search"/>
   </view>
   <!--搜索-->  
@@ -36,18 +36,62 @@
      <text>{{item.icon}}</text>
     </view>
   </block>
+<!--小知识-->  
   <view class="common_sense">
     <view class="sense_icon">
-      <image src="/icon/doctor.png" class="img1"></image>
-      <image src="/icon/little knowledge.png" class="img2"></image>  
+      <image src="/image/icon/doctor.png" class="img1"></image>
+      <image src="/image/icon/little knowledge.png" class="img2"></image>  
     </view>
-    <scroll-view scroll-y="true" class="sense_title">
+    <!--小知识文字滚动--> 
+    <swiper  vertical="true" circular="true" autoplay="true" duration="1000" interval="2000" class="sense_title">
       <block wx:for="{{indexInfo.title}}">
-       
+       <swiper-item>
         <view class="title">{{item.title}}</view>  
-     
+      </swiper-item>
       </block>
-    </scroll-view>
+    </swiper >
+    <!--小知识文字滚动-->
   </view>
+  <!--小知识--> 
 </view>
 <!--十个小图标-->
+<view class="content_main">
+  <!--牙齿矫正报告-->
+  <view class="content_main_left">
+    <text class="content_title">牙齿矫正报告\n</text> 
+    <text class="description">权威专业团队一同探索</text>
+    <image src="/image/team.png"></image>
+  </view>
+  <!--牙齿矫正报告-->
+  <view class="content_main_right">
+    <!--专家说-->
+    <view class="expert">
+      <text class="content_title">专家说\n</text>
+      <text class="description">著名牙科专家解说</text>
+      <image src="/image/doctor.png"></image>
+    </view>
+    <!--专家说-->
+    <!--公共问答-->
+    <view class="interlocution">
+      <text class="content_title">公共问答\n</text>
+      <text class="description">集思广益，为你解答</text>
+      <image src="/image/public.png"></image>
+    </view>
+    <!--公共问答-->
+  </view>
+</view>
+<!--附近的诊所-->
+<view class="near_clinics">
+  <view class="near_clinics_title">
+    <text>附近口腔诊所</text> 
+  </view>
+  <view class="near_clinics_content">
+   
+    
+    <view class="classname"></view>
+    
+  </view>
+</view>
+
+<!--附近的诊所-->
+

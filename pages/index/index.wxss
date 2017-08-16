@@ -1,4 +1,5 @@
 /**index.wxss**/
+page{background-color: #eef3f4;}
 .placeholder-font{z-index: 1;color: #fff;opacity:1;font-size: 1rem;text-align:center;}
 .header-dw{width: 100%;height: 6vh;background-color: #3297d8;}
 .message-icon{position: relative;top: -7.6vh;left: 90vw;height: 4vh;width: 6vw; }
@@ -7,7 +8,7 @@
 .slide-image{  width: 100%;height: 25vh;  } 
 .search{padding:0 4vw 0 8vw; color: #fff;font-size: 1rem;border-radius: 3vh;  width: 68vw; line-height:6vh; height: 6vh;position: relative;top: -2vh;left: 10vw; background-color: #000; opacity: 0.5;}
 .search-icon{z-index: 1; position: relative;top: 3vh;left: 12vw;width: 4vw; line-height:3vh; height: 3vh;}
-.content_icon{width: 100vw; height: 38vh; background-color: #eeeeee;}
+.content_icon{width: 100vw; height: 38vh; background-color: #eef3f4;}
 .list-icon{float:left; width: 20vw; height: 20vw; text-align:center;}
 .list-icon image{ width: 12vw; height: 12vw;  margin:4vw 4vw 0 4vw;}
 .list-icon text{color: #8f8f8f;opacity:1;font-size: 0.8rem; }
@@ -17,3 +18,17 @@
 .sense_icon image.img2{position:relative; top: -38vw; width: 18vw; height: 6vw; margin: 2vw 2vw 2vw 2vw; }
 .sense_title{position: relative; top: -38vw; left: 42vw;  font-size: 1rem; width: 46vw; height: 10vw; float:left;line-height: 10vw; text-align: center}
 .title{overflow:hidden;white-space: nowrap;  text-overflow: ellipsis;width: 40vw;}
+.content_main{width:100vw; height:30vh;}
+.content_main_left{float:left; width:49vw; height:30vh;border-right: 1vw solid #eef3f4;}
+.content_main_left image{position:relative; top: -7vh; z-index: -1; width:49vw; height:30vh;}
+.content_main_right{float:left;width:50vw; height:30vh; }
+.expert{width:50vw; height:14.75vh; border-bottom: 0.5vh solid #eef3f4; }
+.expert image{position:relative; top: -7vh; z-index: -1;width:50vw; height:14.75vh;}
+.interlocution{width:50vw; height:14.75vh; }
+.interlocution image{position:relative; top: -7vh; z-index: -1;width:50vw; height:14.75vh;}
+.content_title{position: relative; left:5vw; top:5vw; font-weight: bold; color: #666666;  width: 49vw; height: 5vh;}
+.description{position: relative; left:5vw; top:5vw;color: #999999;font-size: 0.7rem; font-weight: bold;}
+.near_clinics{ padding-top:1vw; width:95vw; height: auto;margin-top:2vw; padding-left: 5vw; background-color: #fff;}
+.near_clinics_title{margin:1vw 0 ;}
+.near_clinics_title text{width:92vw; height: 8vw; line-height: 8vw; padding-left:2vw;  border-left: 1vw solid #3297d8; }
+.near_clinics_content{border-top: 1px solid #eeeeee; }

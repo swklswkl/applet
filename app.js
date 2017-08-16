@@ -25,5 +25,9 @@ App({
 
   globalData: {
     userInfo: null
+
+  },
+  mdkey:function() {
+    return "公共js调用方法headertxt"
   }
 })
