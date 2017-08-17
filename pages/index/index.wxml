@@ -13,7 +13,7 @@
 <!--头部end-->
 <!--轮播图start-->
 <swiper  autoplay="true" interval="2000" duration="1000">  
-  <block wx:for="{{indexInfo.banner}}">  
+  <block wx:for="{{indexInfo.banner}}" wx:key="id">  
     <swiper-item> 
       <navigator url="{{item.advpic}}" hover-class="navigator-hover">  
         <image src="{{imgPath+item.advpic}}" class="slide-image"/>  
@@ -30,7 +30,7 @@
 <!--轮播图end-->  
 <!--十个小图标-->
 <view class="content_icon">
-  <block wx:for="{{indexInfo.icon}}" >
+  <block wx:for="{{indexInfo.icon}}" wx:key="id">
     <view class="list-icon"> 
      <image src="{{iconPath+item.icon_image}}" class=""></image>
      <text>{{item.icon}}</text>
@@ -44,7 +44,7 @@
     </view>
     <!--小知识文字滚动--> 
     <swiper  vertical="true" circular="true" autoplay="true" duration="1000" interval="2000" class="sense_title">
-      <block wx:for="{{indexInfo.title}}">
+      <block wx:for="{{indexInfo.title}}" wx:key="article_id">
        <swiper-item>
         <view class="title">{{item.title}}</view>  
       </swiper-item>

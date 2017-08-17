@@ -3,7 +3,6 @@
 var app = getApp()
 Page({
   data: {
-    mdkey:app.mdkey(),
     userInfo: {},
     imgPath: 'https://www.eeboo.cn/uploads/',
     iconPath: 'http://www.yyaai.com/uploads/icons/',
@@ -29,6 +28,7 @@ Page({
 
       })
     })
+    
     //获取当前的地理位置
       wx.getLocation({
         type:'gcj02',
@@ -44,65 +44,63 @@ Page({
               key:"J6JBZ-HYHK6-T2WSP-EXKXS-2JIA3-CSBIS"
             },
             success: function (res) {
-              console.log(res)
               var address = res.data.result.address
               if(res.statusCode==200){
                 that.setData({
-                  address:address,
-                  lat: latitude,
-                  lng: longitude
+                  address:address       
                 })
               }
             }
           })
-        }
-      })
-    //请求首页接口
-    wx.request({
-      url: myWebsite+'appNewCustomer/Index/index',
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        if(res.statusCode==200){
-          var Data = res.data.data;
-          that.setData({
-            indexInfo:Data,
+          var nearclinic = {
+            lng:latitude,
+            lat:longitude,
+            count:'10',
+            start:'1',            
+          };
+          //调用全局加密方法
+          var Dataclinic = app.mdkey(nearclinic);
+          //console.log(Dataclinic)
+          //附近的诊所
+          wx.request({
+            url: myWebsite +'appNewCustomer/Index/nearClinic',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'post',
+            data: Dataclinic,
+            success: function (res) {
+              var data = res.data.data
+              that.setData({
+                clinic:data.clinic,
+                total:data.total
+              })
+              
+            }
+          });
           
-          })
         }
-      }
-    })
-    //req1 = new object();
-   /* req1 = {
-      lng: lng,
-      lat: lat,
-      count: 10,
-      start: 1,
-    };
-    console.log(req1)*/
-    wx.request({
-      url: myWebsite + 'appNewCustomer/Index/nearClinic',
-      method:'POST',
-      data:{
-        lng:lng,
-        lat:lat,
-        count:'',
-        start:'',
-        mdkey:'',
-      },
-      success: function (res) {
-        console.log(res)
-        if (res.statusCode == 200) {
-          var Data = res.data.data;
-          that.setData({
-            indexInfo: Data,
+      });
+      
+      //请求首页接口
+      wx.request({
+        url: myWebsite+'appNewCustomer/Index/index',
+        header: {
+          'Accept': 'application/json'
+        },
+        success: function (res) {
+          if(res.statusCode==200){
+            var Data = res.data.data;
+            //console.log(Data)
+            that.setData({
+              indexInfo:Data,
+            
+            })
+          }
+        }
+      });
 
-          })
-        }
-      }
-    })
-     
+
   }
  
 })
