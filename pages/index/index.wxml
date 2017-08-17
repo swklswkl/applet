@@ -85,12 +85,18 @@
   <view class="near_clinics_title">
     <text>附近口腔诊所</text> 
   </view>
-  <view class="near_clinics_content">
-   
-    
-    <view class="classname"></view>
-    
-  </view>
+  <block wx:for="{{clinic}}" wx:key="clinic_id">
+    <view class="near_clinics_content">
+      <image src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}"></image>
+      <view class="clinic_right">
+        <text>{{item.clinic_name}}\n</text>
+        <text>{{item.distance}}\n</text>
+        <text>{{item.address}}</text>
+      </view>
+      
+      <view class="classname"></view> 
+    </view>
+  </block>
 </view>
 
 <!--附近的诊所-->

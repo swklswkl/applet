@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+var start = 0;//分页
 var app = getApp()
 Page({
   data: {
@@ -52,12 +53,14 @@ Page({
               }
             }
           })
+          
           var nearclinic = {
             lng:latitude,
             lat:longitude,
-            count:'10',
-            start:'1',            
+            count:10,
+            start:start,            
           };
+          console.log(nearclinic)
           //调用全局加密方法
           var Dataclinic = app.mdkey(nearclinic);
           //console.log(Dataclinic)
@@ -71,6 +74,7 @@ Page({
             data: Dataclinic,
             success: function (res) {
               var data = res.data.data
+              console.log(data)
               that.setData({
                 clinic:data.clinic,
                 total:data.total
@@ -101,6 +105,11 @@ Page({
       });
 
 
-  }
+  },
+  onReachBottom: function () {
+    //上拉  
+     var start = start++
+      console.log(start)
+  }  
  
 })

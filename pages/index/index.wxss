@@ -31,4 +31,6 @@ page{background-color: #eef3f4;}
 .near_clinics{ padding-top:1vw; width:95vw; height: auto;margin-top:2vw; padding-left: 5vw; background-color: #fff;}
 .near_clinics_title{margin:1vw 0 ;}
 .near_clinics_title text{width:92vw; height: 8vw; line-height: 8vw; padding-left:2vw;  border-left: 1vw solid #3297d8; }
-.near_clinics_content{border-top: 1px solid #eeeeee; }
+.near_clinics_content{border-top: 1px solid #eeeeee; padding:5vw 0; width:95vw; height: 40vw;}
+.near_clinics_content image{float:left; width:40vw; height: 40vw;}
+.clinic_right{float:left; width:40vw; height: 40vw;padding-left:5vw; }

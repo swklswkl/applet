@@ -42,8 +42,7 @@ App({
       }
     }
     //将数字按数据字典排序并用"&"
-     result = result.sort().join("&") +"helloYya";
-     var mdkey = hash.MD5(result);//md5加密  
+     result = result.sort().join("&") +"helloYya"; 
      data['mdkey'] = hash.MD5(result);
      return data;
   }
