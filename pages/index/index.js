@@ -8,14 +8,12 @@ Page({
     imgPath: 'https://www.eeboo.cn/uploads/',
     iconPath: 'http://www.yyaai.com/uploads/icons/',
   },
-  
-  tapName: function(event) {
-    //console.log(event)
-  },
-
-  //事件处理函数
-  bindViewTap: function() {
-   
+  //搜索输入完关键字触发跳转页面
+  search: function (event) {
+    var keyword = event.detail.value;
+    wx.navigateTo({
+      url: '/pages/search/search?keyword=' + keyword,
+    })
   },
   //加载页面
   onLoad: function () {
@@ -29,7 +27,6 @@ Page({
 
       })
     })
-    
     //获取当前的地理位置
       wx.getLocation({
         type:'gcj02',
@@ -57,10 +54,9 @@ Page({
           var nearclinic = {
             lng:latitude,
             lat:longitude,
-            count:10,
+            count:20,
             start:start,            
-          };
-          console.log(nearclinic)
+          }
           //调用全局加密方法
           var Dataclinic = app.mdkey(nearclinic);
           //console.log(Dataclinic)
@@ -73,13 +69,15 @@ Page({
             method: 'post',
             data: Dataclinic,
             success: function (res) {
-              var data = res.data.data
-              console.log(data)
+              var list = res.data.data.clinic
+              for(var i in list){
+                list[i]['distance'] = (list[i]['distance'] / 1000).toFixed(1)+"km"
+              }
               that.setData({
-                clinic:data.clinic,
-                total:data.total
+                clinic:list
               })
-              
+              start ++;
+               
             }
           });
           
@@ -108,8 +106,8 @@ Page({
   },
   onReachBottom: function () {
     //上拉  
-     var start = start++
-      console.log(start)
+      start +=  1;
+      //console.log(start)
   }  
  
 })

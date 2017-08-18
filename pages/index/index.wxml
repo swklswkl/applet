@@ -23,7 +23,7 @@
   <!--搜索-->
   <view class="">
     <image src="/image/icon/search1.png" class="search-icon"></image>
-    <input type="text" name='search' placeholder-class="placeholder-font" placeholder="请输入诊所诊所或牙医名称" class="search"/>
+    <input type="text" name='search' bindconfirm="search" placeholder-class="placeholder-font" placeholder="请输入诊所诊所或牙医名称" class="search"/>
   </view>
   <!--搜索-->  
 </swiper>
@@ -87,17 +87,21 @@
   </view>
   <block wx:for="{{clinic}}" wx:key="clinic_id">
     <view class="near_clinics_content">
-      <image src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}"></image>
+      <image class="clinic_image" src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}"></image>
       <view class="clinic_right">
-        <text>{{item.clinic_name}}\n</text>
-        <text>{{item.distance}}\n</text>
-        <text>{{item.address}}</text>
+       <view class="clinic_name"><text class="text1">{{item.clinic_name}}</text><text class="text2">{{item.distance}}\n</text></view>
+       <view class="starsmaller">
+        <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+        <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+        <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+        <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+        <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+        <text>5.0</text>
+       </view> 
+       <view class="clinic_address"><text style="color:#222222">{{item.address}}</text></view>
       </view>
-      
-      <view class="classname"></view> 
+       
     </view>
   </block>
 </view>
-
 <!--附近的诊所-->
-

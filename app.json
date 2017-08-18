@@ -1,14 +1,45 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/appointment/appointment",
+    "pages/advisory/advisory",
+    "pages/search/search"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "医牙啊",
-    "navigationBarTextStyle":"white",
-    "enablePullDownRefresh":"true"
-   
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon/home_nor.png",
+        "selectedIconPath": "image/icon/home_sel.png"
+      },
+      {
+        "pagePath": "pages/advisory/advisory",
+        "text": "咨询",
+        "iconPath": "image/icon/message_nor.png",
+        "selectedIconPath": "image/icon/message_sel.png"
+      },
+      {
+        "pagePath": "pages/appointment/appointment",
+        "text": "预约",
+        "iconPath": "image/icon/appointmen_nor.png",
+        "selectedIconPath": "image/icon/appointment_sel.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "个人中心",
+        "iconPath": "image/icon/menu_nor.png",
+        "selectedIconPath": "image/icon/menu_sel.png"
+      }
+    ]
   }
 }
