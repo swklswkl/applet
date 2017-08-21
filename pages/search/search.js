@@ -45,7 +45,7 @@ Page({
           start: 0,
           keyword: options.keyword
         }
-        console.log(searchClinic)
+        //console.log(searchClinic)
         //调用全局加密方法
         var searchClinic = app.mdkey(searchClinic);
         //附近的诊所
@@ -57,7 +57,7 @@ Page({
           method: 'post',
           data: searchClinic,
           success: function (res) {
-            var list = res.data.data
+            var list = res.data.data.list
             console.log(list)
             /*for (var i in list) {
               list[i]['distance'] = (list[i]['distance'] / 1000).toFixed(1) + "km"

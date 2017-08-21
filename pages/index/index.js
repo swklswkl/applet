@@ -12,7 +12,7 @@ Page({
   search: function (event) {
     var keyword = event.detail.value;
     wx.navigateTo({
-      url: '/pages/search/search?keyword=' + keyword,
+      url: '/pages/search/search?keyword='+keyword,
     })
   },
   //加载页面
