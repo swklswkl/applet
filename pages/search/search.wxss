@@ -5,3 +5,21 @@ page{background-color:#eeeeee;}
 .red{line-height:100rpx;text-align:center;color:#3297d8;flex:1;border-bottom:3px solid #3297d8;border-right:1px solid gainsboro;font-weight:bold;font-size:28rpx;}
 .show{display:block;text-align:center;line-height:200rpx; background-color:#fff; height: 100vh;}
 .hidden{display:none;text-align:center;line-height:200px; background-color:#fff;}
+.near_clinics{ width:95vw; height: auto; padding-left: 5vw; background-color: #fff;}
+.near_clinics_title{margin:1vw 0 ;}
+.near_clinics_title text{width:92vw; height: 8vw; line-height: 8vw; padding-left:5vw;  border-left: 1vw solid #3297d8; }
+.near_clinics_content{border-top: 1px solid #eeeeee; padding:5vw 0; width:95vw; height: 30vw;}
+.near_clinics_content .clinic_image{float:left; width:35vw; height: 30vw;}
+.clinic_right{float:left; width:55vw; height: 30vw;padding-left:2vw; font-size: 1rem; text-align:left;}
+.clinic_icon{width: 5vw;height: 5vw;}
+.clinic_name,.starsmaller{width: 50vw; height: 10vw; line-height: 10vw; }
+.clinic_name .text1{width:40vw; float: left; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.clinic_name .text2{width:10vw;float: right;color: #666666;}
+.clinic_address{width: 50vw; height: 10vw; line-height: 10vw;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.doctor_image{float:left; width:35vw; height: 30vw;}
+.doctorlist{width:95vw; height: auto; padding-left: 1vw; background-color: #fff;}
+.doctor_right{float:left; width:55vw; height: 30vw;padding-left:2vw; font-size: 0.8rem; text-align:left;}
+.near_doctor_content{border-top: 1px solid #eeeeee; padding:1vw 0; width:95vw; height: 30vw;}
+.doctor_name{width: 50vw; height: 15vw; line-height: 15vw; }
+.doctor_address{width: 50vw; height: 15vw; line-height: 15vw;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+

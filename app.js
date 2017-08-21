@@ -31,20 +31,20 @@ App({
   },
   //接口加密
   mdkey:function(data) {
-    var result =[];
-    //将对象转化为数组
+    var arr1 =[];
+    var data1 = [];
+    //将对象转化为数
     for (var i in data) {//过滤
-      if (data[i] == "" & data[i] !=0){
-        continue;
-      }else{
+      if(data[i] != "" || data[i] =='0'){
         var str = i + "=" + data[i]
-        result.push(str);
+        arr1.push(str);
+        data1[i] = data[i];
       }
     }
     //将数字按数据字典排序并用"&"
-     result = result.sort().join("&") +"helloYya"; 
-     data['mdkey'] = hash.MD5(result);
-     return data;
+     var mdkey = arr1.sort().join("&")+"helloYya"; 
+     data1['mdkey'] = hash.MD5(mdkey);
+     return data1;
   }
 
 

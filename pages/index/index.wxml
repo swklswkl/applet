@@ -1,3 +1,4 @@
+<loading hidden="{{hiddenLoading}}">正在加载</loading>
 <!--头部start-->
 <view class="header-dw">
   <view class="header-location">
@@ -85,7 +86,7 @@
   <view class="near_clinics_title">
     <text>附近口腔诊所</text> 
   </view>
-  <block wx:for="{{clinic}}" wx:key="clinic_id">
+  <block wx:for="{{clinic}}" >
     <view class="near_clinics_content">
       <image class="clinic_image" src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}"></image>
       <view class="clinic_right">

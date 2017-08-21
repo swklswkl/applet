@@ -10,8 +10,8 @@
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "医牙啊",
-    "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": "true"
+    "navigationBarTextStyle": "white"
+    
   },
   "tabBar": {
     "selectedColor": "#1296db",
