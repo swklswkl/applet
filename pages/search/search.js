@@ -137,7 +137,7 @@ Page({
             that.setData({
               doctor: doctorlistTem.concat(doctor_list),
               hasMoreData_doctor: true,
-              page: that.data.page + 1,
+              doctor_page: that.data.doctor_page + 1,
               doctorlist: doctorlistTem.concat(doctor_list)
             })
           }
@@ -189,7 +189,6 @@ Page({
     var that = this
     if (that.data.hasMoreData) {
       that.ClinicList(that.data.keyword)
-      console.log(that.data.keyword) 
     } else {
       wx.showToast({
         title: '没有更多数据'

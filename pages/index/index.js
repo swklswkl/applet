@@ -23,6 +23,17 @@ Page({
       url: '/pages/search/search?keyword='+keyword,
     })
   },
+  map_address:function(){
+    wx.chooseLocation({
+      success:function(res){
+        wx.openLocation({
+          latitude: res.latitude,
+          longitude:res.longitude,
+        
+        })
+      }
+    }) 
+  },
    //获取当前的地理位置
   nearClinicList: function () {
    

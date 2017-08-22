@@ -4,7 +4,7 @@
   <view class="header-location">
     <image src="/image/icon/home＿location.png" class="location-icon"></image>
   </view>
-  <view class="header-address">
+  <view bindtap="map_address" class="header-address">
     <text>{{address}}</text>
   </view>
   <view class="header-message">
