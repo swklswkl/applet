@@ -1,0 +1,13 @@
+/* icon.wxss */
+.header-dw{width: 100%;height: 6vh;background-color: #3297d8;position:absolute;top:0vh;}
+.header-address text{color:#fff; position: relative; top: 3.4vh; text-align: center; line-height:6vh; height:6vh;  }
+.header-address{position: relative;top: -3.4vh;left: 10vw;height: 4vh;width: 80vw; color: #fff;text-align: center;}
+.doctor_image{float:left; width:35vw; height: 30vw;}
+.doctorlist{width:95vw; height: auto; padding-left: 1vw; margin-top:6vh;background-color: #fff;}
+.doctor_right{float:left; width:55vw; height: 30vw;padding-left:2vw; font-size: 0.8rem; text-align:left;}
+.near_doctor_content{border-top: 1px solid #eeeeee; padding:1vw 0; width:95vw; height: 30vw;}
+.doctor_name{width: 50vw; height: 15vw; line-height: 15vw; }
+.doctor_address{width: 50vw; height: 15vw; line-height: 15vw;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+
+

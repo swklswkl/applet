@@ -16,6 +16,7 @@ Page({
     pageSize: 10,
     hasMoreData: true,
     hasMoreData_doctor:true,
+    searchLoadingComplete:true,
     contentlist: [],
     doctorlist: [],
   },
@@ -131,7 +132,8 @@ Page({
           if (doctor_list.length < that.data.pageSize) {
             that.setData({
               doctor: doctorlistTem.concat(doctor_list),
-              hasMoreData_doctor: false
+              hasMoreData_doctor: false,
+              searchLoadingComplete:false,
             })
           } else {
             that.setData({
@@ -196,11 +198,7 @@ Page({
     }
     if (that.data.hasMoreData_doctor) {
       that.DoctorList(that.data.keyword)
-    } else {
-      wx.showToast({
-        title: '没有更多数据'
-      })
-    }
+    } 
   },
 
   /**

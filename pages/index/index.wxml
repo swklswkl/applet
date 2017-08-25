@@ -31,8 +31,8 @@
 <!--轮播图end-->  
 <!--十个小图标-->
 <view class="content_icon">
-  <block wx:for="{{indexInfo.icon}}" wx:key="id">
-    <view class="list-icon"> 
+  <block wx:for="{{indexInfo.icon}}" wx:key="{{item.id}}">
+    <view class="list-icon" data-id="{{item.id}}" data-title="{{item.icon}}" bindtouchend="tenicon"> 
      <image src="{{iconPath+item.icon_image}}" class=""></image>
      <text>{{item.icon}}</text>
     </view>
@@ -86,7 +86,7 @@
   <view class="near_clinics_title">
     <text>附近口腔诊所</text> 
   </view>
-  <block wx:for="{{clinic}}" >
+  <block wx:for="{{clinic}}" wx:key="clinic_id">
     <view class="near_clinics_content">
       <image class="clinic_image" src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}"></image>
       <view class="clinic_right">

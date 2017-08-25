@@ -4,14 +4,14 @@
     "pages/logs/logs",
     "pages/appointment/appointment",
     "pages/advisory/advisory",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/icon/icon"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "医牙啊",
     "navigationBarTextStyle": "white"
-    
   },
   "tabBar": {
     "selectedColor": "#1296db",

@@ -9,6 +9,7 @@ Page({
     userInfo: {},
     imgPath: 'https://www.eeboo.cn/uploads/',
     iconPath: 'http://www.yyaai.com/uploads/icons/',
+    address:"",
     //分页数据
     page: 0,
     pageSize: 10,
@@ -33,6 +34,14 @@ Page({
         })
       }
     }) 
+  },
+  //10图标页面传值
+  tenicon:function(e){
+    var id = e.currentTarget.dataset.id
+    var title = e.currentTarget.dataset.title
+    wx.navigateTo({
+      url: '/pages/icon/icon?id=' + id + '&title=' + title,
+    })
   },
    //获取当前的地理位置
   nearClinicList: function () {

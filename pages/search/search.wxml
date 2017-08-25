@@ -7,7 +7,7 @@
   <view class="{{selected?'show':'hidden'}}">
     <!--诊所-->
     <view class="near_clinics">
-      <block wx:for="{{clinic}}" >
+      <block wx:for="{{clinic}}" wx:key="clinic_id">
         <view class="near_clinics_content">
           <image class="clinic_image" src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}"></image>
           <view class="clinic_right">
@@ -31,7 +31,7 @@
   <!--医生-->
   <view class="{{selected1?'show':'hidden'}}">
     <view class="doctorlist">
-      <block wx:for="{{doctor}}" wx:key="doctor_id">
+      <block wx:for="{{doctor}}" wx:key="clinic_id">
         <view class="near_doctor_content">
           <image class="doctor_image" src="{{'http://www.yyaai.com/uploads/doctor/'+item.photo}}"></image>
           <view class="doctor_right">
@@ -42,6 +42,8 @@
           
         </view>
       </block>
+      <view class="loading" hidden="{{!hasMoreData_doctor}}">正在载入更多...</view>
+      <view class="loading complete" hidden="{{searchLoadingComplete}}">已加载全部</view>
     </view>
   </view>
   <!--医生-->
