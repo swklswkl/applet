@@ -5,7 +5,10 @@
     "pages/appointment/appointment",
     "pages/advisory/advisory",
     "pages/search/search",
-    "pages/icon/icon"
+    "pages/icon/icon",
+    "pages/nousarticle/nousarticle",
+    "pages/clinics/clinics",
+    "pages/doctors/doctors"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -1,9 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp()
-
 var myWebsite = app.globalData.myWebsite;
-
 Page({
   data: {
     userInfo: {},
@@ -41,6 +39,20 @@ Page({
     var title = e.currentTarget.dataset.title
     wx.navigateTo({
       url: '/pages/icon/icon?id=' + id + '&title=' + title,
+    })
+  },
+  //小常识文章
+  scrollarticle:function(e){
+    var article_id = e.currentTarget.dataset.article_id
+    wx.navigateTo({
+      url: '/pages/nousarticle/nousarticle?article_id=' + article_id ,
+    })
+  },
+  //点击附近的诊所
+  tapnearclinic: function (e) {
+    var clinic_id = e.currentTarget.dataset.clinic_id
+    wx.navigateTo({
+      url: '/pages/clinics/clinics?clinic_id=' + clinic_id,
     })
   },
    //获取当前的地理位置
@@ -146,6 +158,7 @@ Page({
               indexInfo:Data,
             
             })
+            
           }
         }
       });

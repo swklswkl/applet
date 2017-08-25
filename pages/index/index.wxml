@@ -7,9 +7,6 @@
   <view bindtap="map_address" class="header-address">
     <text>{{address}}</text>
   </view>
-  <view class="header-message">
-    <image src="/image/icon/news_none.png" class="message-icon"></image>
-  </view>
 </view>
 <!--头部end-->
 <!--轮播图start-->
@@ -47,7 +44,7 @@
     <swiper  vertical="true" circular="true" autoplay="true" duration="1000" interval="2000" class="sense_title">
       <block wx:for="{{indexInfo.title}}" wx:key="article_id">
        <swiper-item>
-        <view class="title">{{item.title}}</view>  
+        <view data-article_id="{{item.article_id}}" bindtap="scrollarticle" class="title">{{item.title}}</view>  
       </swiper-item>
       </block>
     </swiper >
@@ -87,7 +84,7 @@
     <text>附近口腔诊所</text> 
   </view>
   <block wx:for="{{clinic}}" wx:key="clinic_id">
-    <view class="near_clinics_content">
+    <view class="near_clinics_content" bindtap="tapnearclinic" data-clinic_id="{{item.clinic_id}}">
       <image class="clinic_image" src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}"></image>
       <view class="clinic_right">
        <view class="clinic_name"><text class="text1">{{item.clinic_name}}</text><text class="text2">{{item.distance}}\n</text></view>

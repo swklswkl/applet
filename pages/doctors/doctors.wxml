@@ -1,0 +1,28 @@
+<!--doctors.wxml-->
+<!--头部start-->
+<view class="header-dw">
+  <view class="header-address">
+    <text>{{name}}医生</text>
+  </view>
+</view>
+<!--头部end-->
+<!--照片start-->
+<view class="">
+  <image class="photos" src="{{'http://www.yyaai.com/uploads/doctor/'+ photo}}"></image>
+</view>
+<view class="near_clinics_title">
+  <text>{{name}}医生</text> 
+</view>
+<!--照片end-->
+<!--咨询预约start-->
+<view class="classname">
+  <view class="classname">
+    <image src="src"></image>
+    <text>我要咨询</text>
+  </view>
+  <view class="classname">
+    <image src="src"></image>
+    <text>马上预约</text>
+  </view>
+</view>
+<!--咨询预约end-->

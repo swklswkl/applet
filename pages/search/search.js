@@ -32,6 +32,14 @@ Page({
       selected1: true
     })
   },
+  //点击医生
+  tapdoctor: function (e) {
+    var doctor_id = e.currentTarget.dataset.doctor_id
+    var name = e.currentTarget.dataset.name
+    wx.navigateTo({
+      url: '/pages/doctors/doctors?doctor_id=' + doctor_id + '&name=' + name 
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

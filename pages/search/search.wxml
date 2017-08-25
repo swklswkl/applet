@@ -32,14 +32,12 @@
   <view class="{{selected1?'show':'hidden'}}">
     <view class="doctorlist">
       <block wx:for="{{doctor}}" wx:key="clinic_id">
-        <view class="near_doctor_content">
+        <view class="near_doctor_content" bindtap="tapdoctor" data-doctor_id="{{item.doctor_id}}" data-name="{{item.name}}">
           <image class="doctor_image" src="{{'http://www.yyaai.com/uploads/doctor/'+item.photo}}"></image>
           <view class="doctor_right">
-          <view class="doctor_name"><text class="text1">{{item.name}}</text></view>
-         
+          <view class="doctor_name"><text class="text1">{{item.name}}</text></view>         
           <view class="doctor_address"><label>诊所名:</label><text style="color:#222222">{{item.clinic_name}}</text></view>
           </view>
-          
         </view>
       </block>
       <view class="loading" hidden="{{!hasMoreData_doctor}}">正在载入更多...</view>

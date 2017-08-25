@@ -1,0 +1,6 @@
+<!--nousarticle.wxml-->
+
+<body>
+{{content}}
+</body>
+

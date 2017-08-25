@@ -2,7 +2,7 @@
 <!--头部start-->
 <view class="header-dw">
   <view class="header-address">
-    <text>{{title}}</text>
+    <text>专长:{{title}}</text>
   </view>
 </view>
 <!--头部end-->
@@ -20,6 +20,5 @@
     </view>
   </block>
   <view class="loading" hidden="{{!hasMoreData}}">正在载入更多...</view>
-  <view class="loading complete" hidden="{{searchLoadingComplete}}">已加载全部</view>
 </view>
 <!--医生-->
