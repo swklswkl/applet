@@ -1,8 +1,19 @@
 /* doctors.wxss */
 page{background-color: #eeeeee;}
 .header-dw{width: 100%;height: 6vh;background-color: #3297d8;position:absolute;top:0vh;}
-.header-address text{color:#fff; position: relative; top: 3.4vh; text-align: center; line-height:6vh; height:6vh;  }
+.header-address text{font-weight:bold;color:#fff; position: relative; top: 3.4vh; text-align: center; line-height:6vh; height:6vh;  }
 .header-address{position: relative;top: -3.4vh;left: 10vw;height: 4vh;width: 80vw; color: #fff;text-align: center;}
 .photos{width: 100vw;margin-top:6vh;}
-.near_clinics_title{padding:2vw 0;background-color:#fff;padding-left:5vw;margin-top:-1vw;}
-.near_clinics_title text{width:92vw; height: 8vw; line-height: 8vw; padding-left:2vw;  border-left: 1vw solid #5cbffe; }
+.near_clinics_title{padding:2vw 0;background-color:#fff;padding-left:5vw;}
+.near_clinics_title text{font-weight:bold;width:92vw; height: 8vw; line-height: 8vw; padding-left:2vw;  border-left: 1vw solid #5cbffe; }
+.adv-appoint{width:88vw; height:15vw;padding: 4vw 6vw;color: #3297d8;}
+.adv{width: 43.5vw; height: 15vw;background-color: #fff;float: left;}
+.appoint{margin-left: 1vw; width: 43.5vw; height: 15vw;background-color: #fff; float: left; }
+.adv-appoint image{width: 8vw;height: 8vw;margin:3.5vw 0 2.5vw 5vw; float: left;}
+.adv-appoint text{float: left; line-height: 15vw; margin-left:4vw;}
+.profile{ width: 100vw; height: auto; background-color: #fff;}
+.profile-title{width:90vw; height: 12vw; line-height: 12vw;margin-left:5vw; border-bottom: 1px solid #eeeeee; }
+.profile-title image{width:8vw;height: 8vw;margin:2vw 0; float: left; }
+.profile-title text{margin-left: 2vw;float: left;}
+.profile-content{width:90vw; height: auto; padding:3vw 5vw;color:#676767; }
+

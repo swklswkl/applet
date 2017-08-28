@@ -8,7 +8,9 @@
     "pages/icon/icon",
     "pages/nousarticle/nousarticle",
     "pages/clinics/clinics",
-    "pages/doctors/doctors"
+    "pages/doctors/doctors",
+    "pages/clinicdetail/clinicdetail",
+    "pages/clinicdetail/clinicdetail"
   ],
   "window": {
     "backgroundTextStyle": "dark",

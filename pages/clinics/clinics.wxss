@@ -1,1 +1,60 @@
 /* pages/clinics/clinics.wxss */
+page{background-color: #eeeeee;}
+.header-dw{width: 100%;height: 6vh;background-color: #3297d8;position:absolute;top:0vh;}
+.header-address text{color:#fff; font-weight: bold; position: relative; top: 3.4vh; text-align: center; line-height:6vh; height:6vh;  }
+.header-address{position: relative;top: -3.4vh;left: 10vw;height: 4vh;width: 80vw; color: #fff;text-align: center;}
+.near_clinics_title{padding:2vw 0;background-color:#fff;padding-left:5vw;margin-top:-1vw;width:100vw;height:8vw; }
+.near_clinics_title .text1{float:left;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;width:58vw; height: 8vw; line-height: 8vw; padding-left:2vw;  border-left: 1vw solid #5cbffe;font-weight:bold; }
+.near_clinics_title .text2{ color:#3496d8;font-size: 0.8rem;float:right;border-left: 1px solid #dddddd; line-height: 6vw;padding-left: 3vw;margin-right: 7vw;margin-top:2vw;}
+.adv-appoint{width:88vw; height:15vw;padding: 4vw 6vw;color: #3297d8;}
+.adv{width: 43.5vw; height: 15vw;background-color: #fff;float: left;}
+.appoint{margin-left: 1vw; width: 43.5vw; height: 15vw;background-color: #fff; float: left; }
+.adv-appoint image{width: 8vw;height: 8vw;margin:3.5vw 0 2.5vw 5vw; float: left;}
+.adv-appoint text{float: left; line-height: 15vw; margin-left:4vw;}
+.slide-image{  width: 100%;height: 30vh;  } 
+swiper {width: 100%;height: 30vh;margin-top:10vw;}
+.nav{position: relative; top: 0;display:flex;flex-direction:row; width:100%;height:100rpx; background-color:#fff;}
+.default{line-height:100rpx;text-align:center;flex:1;border-bottom:1px solid #cbcbcb;color:#999999;font-weight:bold;font-size:28rpx;}
+.red{line-height:100rpx;text-align:center;color:#3297d8;flex:1;border-bottom:3px solid #3297d8;font-weight:bold;font-size:28rpx;}
+.show{display:block;text-align:center;line-height:200rpx; background-color:#fff; height: auto;}
+.hidden{display:none;text-align:center;line-height:200px; background-color:#fff;}
+.worktime,.address{width: 90vw;height: 12vw;margin: 0 5vw; border-bottom: 1px solid #eeeeee;}
+.worktime image,.service image{width: 6vw; height: 6vw; float: left; margin-top: 3vw;}
+.address image{width: 5vw; height: 6vw; float: left; margin-top: 3vw;}
+.worktime text,.service text{ line-height: 12vw; margin-left: 3vw; float: left;}
+.address text{ line-height: 12vw; width: 80vw; height: 12vw; margin-left: 4vw; text-align: left; float: left; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.service,.service-set {width: 90vw;height: 12vw;margin: 0 5vw;}
+
+.service-set .image1{width: 6vw; height: 6vw; float: left; margin-top: 3vw; margin-left:10vw; }
+.service-set .image2{width: 6vw; height: 6vw; float: left; margin-top: 3vw; margin-left:10vw;}
+.service-set text{ line-height: 12vw; margin-left: 2vw; float: left;}
+.xian{width: 100vw; height:2vh; background-color: #eeeeee;}
+.profile{ width: 100vw; height: auto; background-color: #fff;}
+.profile-title{width:90vw; height: 12vw; line-height: 12vw;margin-left:5vw; border-bottom: 1px solid #eeeeee; }
+.profile-title image{width:8vw;height: 8vw;margin:2vw 0; float: left; }
+.profile-title text{margin-left: 2vw;float: left;}
+.profile-content{width:90vw; height: auto; padding:3vw 5vw;color:#676767; }
+.profile-content text{line-height: 10vw;}
+.doctorlist{width:95vw; height: auto; padding-left: 1vw; background-color: #fff;}
+.doctor_right{float:left; width:55vw; height: 30vw;padding-left:2vw; font-size: 1rem; text-align:left;}
+.near_doctor_content{border-top: 1px solid #eeeeee; padding:1vw 0; width:95vw; height: 30vw;}
+.doctor_name{width: 50vw; height: 15vw; line-height: 15vw; }
+.doctor_address{width: 50vw; height: 15vw; line-height: 15vw;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.doctor_image{float:left; width:35vw; height: 30vw;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

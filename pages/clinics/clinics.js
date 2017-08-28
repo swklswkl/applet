@@ -8,9 +8,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    selected: true,
+    selected1: false,
   },
-
+  selected: function (e) {
+    this.setData({
+      selected1: false,
+      selected: true
+    })
+  },
+  selected1: function (e) {
+    this.setData({
+      selected: false,
+      selected1: true
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -39,7 +51,34 @@ Page({
       }
     })
   },
-
+  //跳转到预约界面
+  appoint: function () {
+    wx.switchTab({
+      url: '/pages/appointment/appointment',
+    })
+  },
+  //跳转到咨询界面
+  adv: function () {
+    wx.switchTab({
+      url: '/pages/advisory/advisory',
+    })
+  },
+  //点击医生
+  tapdoctor: function (e) {
+    var doctor_id = e.currentTarget.dataset.doctor_id
+    var name = e.currentTarget.dataset.name
+    wx.navigateTo({
+      url: '/pages/doctors/doctors?doctor_id=' + doctor_id + '&name=' + name
+    })
+  },
+  //跳转认证详情
+  viewDetail:function(e){
+    var clinic_id = e.currentTarget.dataset.clinic_id;
+    var name = e.currentTarget.dataset.name;
+    wx.navigateTo({
+      url: '/pages/clinicdetail/clinicdetail?clinic_id=' + clinic_id +'&name='+name
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

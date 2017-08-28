@@ -1,0 +1,26 @@
+<!--clinicdetail.wxml-->
+<!--头部start-->
+<view class="header-dw">
+  <view class="header-address">
+    <text>{{name}}</text>
+  </view>
+</view>
+<!--头部end-->
+<!--诊所简介start-->
+<view class="profile">
+  <view class="profile-title border-bottom">
+    <image src="/image/icon/approve_tianyi.png"></image>
+    <text>天医认证</text>
+  </view>
+  <view class="profile-title">
+    <image src="/image/icon/approve_zhizhao.png"></image>
+    <text>营业执照:{{clinicDetails.clinicCertificateNo}}</text>
+  </view>
+  <image class="border-bottom image" src="{{clinicimgpath+clinicDetails.clinicCertificate}}"></image>
+  <view class="profile-title">
+    <image src="/image/icon/approve_weijiwei.png"></image>
+    <text>卫计委许可:{{clinicDetails.healthCommissionNo}}</text>
+  </view>
+  <image class="border-bottom image" src="{{clinicimgpath+clinicDetails.healthCommission}}"></image>
+</view>
+<!--诊所简介end-->

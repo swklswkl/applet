@@ -29,7 +29,7 @@
 <!--十个小图标-->
 <view class="content_icon">
   <block wx:for="{{indexInfo.icon}}" wx:key="{{item.id}}">
-    <view class="list-icon" data-id="{{item.id}}" data-title="{{item.icon}}" bindtouchend="tenicon"> 
+    <view class="list-icon" data-id="{{item.id}}" data-title="{{item.icon}}" bindtap="tenicon"> 
      <image src="{{iconPath+item.icon_image}}" class=""></image>
      <text>{{item.icon}}</text>
     </view>

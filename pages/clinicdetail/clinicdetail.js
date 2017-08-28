@@ -1,57 +1,46 @@
-// doctors.js
+// clinicdetail.js
 var app = getApp()
-var myWebsite = app.globalData.myWebsite;//接口网址
+var myWebsite = app.globalData.myWebsite;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    clinicimgpath: 'http://www.yyaai.com/uploads/clinic/'
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
-    var doctors = {
-      doctor_id: options.doctor_id,
+    var clinic = {
+      clinic_id: options.clinic_id,
     }
     that.setData({
-      name: options.name,
+      name:options.name
     })
     //调用全局加密方法
-    var doctors = app.mdkey(doctors);
+    var clinic = app.mdkey(clinic);
     wx.request({
-      url: myWebsite + 'appNewCustomer/Index/resume',
-      data: doctors,
+      url: myWebsite + 'appNewCustomer/Index/certification',
+      data: clinic,
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: 'post',
       success: function (res) {
-        if (res.statusCode == 200) {
+        console.log(res.data.data)
+        if (res.data.code == 0) {
           that.setData({
-            photo: res.data.data.photo,
-            aboutme: res.data.data.aboutMe
+            clinicDetails: res.data.data
           })
         }
       }
     })
   },
-  //跳转到预约界面
-  appoint: function () {
-    wx.switchTab({
-      url: '/pages/appointment/appointment',
-    })
-  },
-  //跳转到咨询界面
-  adv: function () {
-    wx.switchTab({
-      url: '/pages/advisory/advisory',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

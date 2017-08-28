@@ -9,7 +9,7 @@
 <!--医生-->
 <view class="doctorlist">
   <block wx:for="{{doctor}}" wx:key="clinic_id">
-    <view class="near_doctor_content">
+    <view class="near_doctor_content" bindtap="tapdoctor" data-doctor_id="{{item.doctor_id}}" data-name="{{item.name}}">
       <image class="doctor_image" src="{{'http://www.yyaai.com/uploads/doctor/'+item.photo}}"></image>
       <view class="doctor_right">
       <view class="doctor_name"><text class="text1">{{item.name}}</text></view>
