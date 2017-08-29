@@ -1,0 +1,12 @@
+<!--feedback.wxml-->
+<view class="feedback-wrap">
+  <form bindsubmit="bindFormSubmit">
+    <view class="textarea-line">
+      <textarea placeholder="您的宝贵意见将是我们进步的源泉" name="textarea" auto-height maxlength="200"/>
+    </view>
+    <view class="input-line">
+    <input placeholder="填写您的手机或邮箱" />
+    </view>
+    <button form-type="submit" class="submit-button disable"> 提交 </button>
+  </form>
+</view>

@@ -1,0 +1,49 @@
+<!--expertsay.wxml-->
+<!--头部start-->
+<view class="header-dw">
+  <view class="header-address">
+    <text>专家说</text>
+  </view>
+</view>
+<!--头部end-->
+<!--热门推荐start-->
+<view class="hot-reconmmed">
+  <view class="near_clinics_title">
+    <text>热门推荐</text>
+  </view>
+  <scroll-view scroll-x="true">
+    <view class="uploadWrap" scroll-x="true">
+      <block wx:for="{{hot}}" wx:key="item.id">
+        <view class="scroll-hot" bindtap="taparticle" data-id="{{item.id}}">
+          <image class="picture" src="https://www.eeboo.cn/uploads/banner2.jpg"></image>
+          <view class="title">{{item.title}}</view>
+          <view class="authorinfo">
+            <text class="text1">{{item.name}}</text>
+            <text class="text2">{{item.update_time}}  </text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+<!--热门推荐end-->
+<view class="newest">
+  <view class="near_clinics_title">
+    <text>最新发布</text>
+  </view>
+  <block wx:for="{{newest}}" wx:key="item.id">
+    <view class="newest-content" bindtap="taparticle" data-id="{{item.id}}">
+      <view class="newest-left">
+        <view class="title">{{item.title}}</view>
+        <view class="authorinfo">
+          <text class="text1">{{item.name}}</text>
+          <text class="text2">{{item.update_time}}  </text>
+        </view>
+      </view>
+      <view class="newest-right">
+        <image class="picture" src="https://www.eeboo.cn/uploads/banner2.jpg"></image>
+      </view>
+    </view>
+  </block>
+
+</view>

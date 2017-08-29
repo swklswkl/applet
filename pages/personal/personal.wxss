@@ -1,0 +1,24 @@
+/* personal.wxss */
+page{
+  background: #eee;
+  font-family: 微软雅黑
+}
+view{
+  background: #fff;
+}
+.userinfo{
+  margin-bottom: 10px; padding: 10px;
+}
+.userinfo-wrap{height: 70px;}
+.useravatar{
+  height: 70px; width:70px; border-radius: 70px; background:red; float:left;margin-left: 10px
+}
+.userinfo-text{float:left; padding: 15px 20px}
+.username{font-weight: bolder}
+.mobile{color: #ccc}
+.personal-line{margin-bottom: 10px;padding: 10px;height: 22px}
+.arrow{float: right;width: 14px; height: 16px;margin-top: 5px;margin-right: 5px}
+.line-wrap{margin-bottom: 1px}
+.pLineIcon{float:left;width: 22px;height: 22px;margin-right: 10px}
+.pLineTitle{float:left; font-size: 16px; height: 32px;}
+.logout-button{background: #eee;color:#999}

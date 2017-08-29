@@ -55,7 +55,7 @@
 <!--十个小图标-->
 <view class="content_main">
   <!--牙齿矫正报告-->
-  <view class="content_main_left">
+  <view class="content_main_left" bindtap="">
     <text class="content_title">牙齿矫正报告\n</text> 
     <text class="description">权威专业团队一同探索</text>
     <image src="/image/team.png"></image>
@@ -63,14 +63,14 @@
   <!--牙齿矫正报告-->
   <view class="content_main_right">
     <!--专家说-->
-    <view class="expert">
+    <view class="expert" bindtap="expertsay">
       <text class="content_title">专家说\n</text>
       <text class="description">著名牙科专家解说</text>
       <image src="/image/doctor.png"></image>
     </view>
     <!--专家说-->
     <!--公共问答-->
-    <view class="interlocution">
+    <view class="interlocution" bindtap="publicquiz">
       <text class="content_title">公共问答\n</text>
       <text class="description">集思广益，为你解答</text>
       <image src="/image/public.png"></image>

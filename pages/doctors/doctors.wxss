@@ -4,7 +4,7 @@ page{background-color: #eeeeee;}
 .header-address text{font-weight:bold;color:#fff; position: relative; top: 3.4vh; text-align: center; line-height:6vh; height:6vh;  }
 .header-address{position: relative;top: -3.4vh;left: 10vw;height: 4vh;width: 80vw; color: #fff;text-align: center;}
 .photos{width: 100vw;margin-top:6vh;}
-.near_clinics_title{padding:2vw 0;background-color:#fff;padding-left:5vw;}
+.near_clinics_title{padding:2vw 0;background-color:#fff;padding-left:5vw;margin-top:-1vw;}
 .near_clinics_title text{font-weight:bold;width:92vw; height: 8vw; line-height: 8vw; padding-left:2vw;  border-left: 1vw solid #5cbffe; }
 .adv-appoint{width:88vw; height:15vw;padding: 4vw 6vw;color: #3297d8;}
 .adv{width: 43.5vw; height: 15vw;background-color: #fff;float: left;}

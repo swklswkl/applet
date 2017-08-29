@@ -8,21 +8,21 @@
     <!--诊所-->
     <view class="near_clinics">
       <block wx:for="{{clinic}}" wx:key="clinic_id">
-        <view class="near_clinics_content">
+        <view class="near_clinics_content" bindtap="tapnearclinic" data-clinic_id="{{item.clinic_id}}">
           <image class="clinic_image" src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}"></image>
           <view class="clinic_right">
-          <view class="clinic_name"><text class="text1">{{item.clinic_name}}</text><text class="text2">{{item.distance}}\n</text></view>
-          <view class="starsmaller">
-            <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
-            <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
-            <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
-            <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
-            <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
-            <text>5.0</text>
-          </view> 
-          <view class="clinic_address"><text style="color:#222222">{{item.address}}</text></view>
+            <view class="clinic_name"><text class="text1">{{item.clinic_name}}</text><text class="text2">{{item.distance}}\n</text></view>
+            <view class="starsmaller">
+              <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+              <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+              <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+              <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+              <image class="clinic_icon" src="/image/icon/starsmaller.png"></image>
+              <text>5.0</text>
+            </view>
+            <view class="clinic_address"><text style="color:#222222">{{item.address}}</text></view>
           </view>
-          
+
         </view>
       </block>
     </view>
@@ -35,8 +35,8 @@
         <view class="near_doctor_content" bindtap="tapdoctor" data-doctor_id="{{item.doctor_id}}" data-name="{{item.name}}">
           <image class="doctor_image" src="{{'http://www.yyaai.com/uploads/doctor/'+item.photo}}"></image>
           <view class="doctor_right">
-          <view class="doctor_name"><text class="text1">{{item.name}}</text></view>         
-          <view class="doctor_address"><label>诊所名:</label><text style="color:#222222">{{item.clinic_name}}</text></view>
+            <view class="doctor_name"><text class="text1">{{item.name}}</text></view>
+            <view class="doctor_address"><label>诊所名:</label><text style="color:#222222">{{item.clinic_name}}</text></view>
           </view>
         </view>
       </block>

@@ -7,34 +7,34 @@ Page({
     userInfo: {},
     imgPath: 'https://www.eeboo.cn/uploads/',
     iconPath: 'http://www.yyaai.com/uploads/icons/',
-    address:"",
+    address: "",
     //分页数据
     page: 0,
     pageSize: 10,
     hasMoreData: true,
-    contentlist:[],
-    hiddenLoading:true,
+    contentlist: [],
+    hiddenLoading: true,
   },
   //搜索输入完关键字触发跳转页面
   search: function (event) {
     var keyword = event.detail.value;
     wx.navigateTo({
-      url: '/pages/search/search?keyword='+keyword,
+      url: '/pages/search/search?keyword=' + keyword,
     })
   },
-  map_address:function(){
+  map_address: function () {
     wx.chooseLocation({
-      success:function(res){
+      success: function (res) {
         wx.openLocation({
           latitude: res.latitude,
-          longitude:res.longitude,
-        
+          longitude: res.longitude,
+
         })
       }
-    }) 
+    })
   },
   //10图标页面传值
-  tenicon:function(e){
+  tenicon: function (e) {
     var id = e.currentTarget.dataset.id
     var title = e.currentTarget.dataset.title
     wx.navigateTo({
@@ -42,10 +42,10 @@ Page({
     })
   },
   //小常识文章
-  scrollarticle:function(e){
+  scrollarticle: function (e) {
     var article_id = e.currentTarget.dataset.article_id
     wx.navigateTo({
-      url: '/pages/nousarticle/nousarticle?article_id=' + article_id ,
+      url: '/pages/nousarticle/nousarticle?article_id=' + article_id,
     })
   },
   //点击附近的诊所
@@ -55,9 +55,19 @@ Page({
       url: '/pages/clinics/clinics?clinic_id=' + clinic_id,
     })
   },
-   //获取当前的地理位置
+  expertsay: function () {
+    wx.navigateTo({
+      url: '/pages/expertsay/expertsay'
+    })
+  },
+  publicquiz: function () {
+    wx.navigateTo({
+      url: '/pages/quiz/quiz'
+    })
+  },
+  //获取当前的地理位置
   nearClinicList: function () {
-   
+
     var that = this;
     wx.getLocation({
       type: 'gcj02',
@@ -100,13 +110,13 @@ Page({
           method: 'post',
           data: Dataclinic,
           success: function (res) {
-            if(res.statusCode==200){
+            if (res.statusCode == 200) {
               var list = res.data.data.clinic
               for (var i in list) {
                 list[i]['distance'] = (list[i]['distance'] / 1000).toFixed(1) + "km"
               }
               var contentlistTem = that.data.contentlist
-              if(that.data.page==0){
+              if (that.data.page == 0) {
                 contentlistTem = [];
               }
               if (list.length < that.data.pageSize) {
@@ -124,7 +134,7 @@ Page({
                 })
               }
             }
-          
+
           }
         });
 
@@ -143,25 +153,25 @@ Page({
       })
     })
     that.nearClinicList()
-     
-      //请求首页接口
-      wx.request({
-        url: myWebsite+'appNewCustomer/Index/index',
-        header: {
-          'Accept': 'application/json'
-        },
-        success: function (res) {
-          if(res.statusCode==200){
-            var Data = res.data.data;
-            //console.log(Data)
-            that.setData({
-              indexInfo:Data,
-            
-            })
-            
-          }
+
+    //请求首页接口
+    wx.request({
+      url: myWebsite + 'appNewCustomer/Index/index',
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+        if (res.statusCode == 200) {
+          var Data = res.data.data;
+          //console.log(Data)
+          that.setData({
+            indexInfo: Data,
+
+          })
+
         }
-      });
+      }
+    });
 
 
   },
@@ -171,9 +181,9 @@ Page({
     this.setData({
       page: 0,
       hiddenLoading: false
-    });   
+    });
     that.nearClinicList()
-  }, 
+  },
   //上拉加载
   onReachBottom: function () {
     if (this.data.hasMoreData) {
@@ -183,6 +193,6 @@ Page({
         title: '没有更多数据'
       })
     }
-  }  
- 
+  }
+
 })

@@ -1,0 +1,12 @@
+/* myappoints.wxss */
+page{background: #eee;font-family: 微软雅黑;font-size: 16px}
+.tTabBar{background: #fff; height: 42px;width: 100%;}
+.tTabItem{width: 32%; text-align: center;float:left;height: 40px;border: 2px solid #fff;line-height: 40px}
+.tTabItem.active{border-bottom: 2px solid #3396D9}
+.item-line{min-height: 150px;margin-top: 20px;background: #fff;color: #999}
+.item-title{broder:1px solid #eee;height: 20px;padding: 10px; font-size: 15px;line-height: 20px;}
+.item-info{width: 90%; margin: 0px auto; border-top: 1px solid #eee;padding: 20px 10px 15px}
+.item-info .iInfo-name{color:#444;font-weight: bolder;padding-bottom: 5px}
+.iInfo-line{clear: both}
+.iInfo-title, .iInfo-name{float:left}
+.stateinfo.abled{color:aqua}

@@ -10,7 +10,9 @@
     "pages/clinics/clinics",
     "pages/doctors/doctors",
     "pages/clinicdetail/clinicdetail",
-    "pages/clinicdetail/clinicdetail"
+    "pages/expertsay/expertsay",
+    "pages/quiz/quiz",
+    "pages/expertarticle/expertarticle"
   ],
   "window": {
     "backgroundTextStyle": "dark",

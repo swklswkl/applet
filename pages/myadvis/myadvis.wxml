@@ -1,0 +1,25 @@
+<!--myadvis.wxml-->
+<view class="array-wrap">
+  <view class="item-line">
+    <view class="item-title">
+      <view class="dateinfo" style="float:left">2017-04-13 11:35</view>
+      <view class="stateinfo abled" style="float:right">未就诊</view>
+    </view>
+    <view class="item-info">
+      <view class="iInfo-line"><view class="iInfo-title">预约诊所：</view><view class="iInfo-name">天医诊所</view></view>
+      <view class="iInfo-line"><view class="iInfo-title">预约医师：</view><view class="iInfo-name">天医诊所</view></view>
+      <view class="iInfo-line"><view class="iInfo-title">预约时间：</view><view class="iInfo-name">2017-01-03 （星期一）15:30</view></view>
+    </view>
+  </view>
+  <view class="item-line">
+    <view class="item-title">
+      <view class="dateinfo" style="float:left">2017-04-13 11:35</view>
+      <view class="stateinfo" style="float:right">已就诊</view>
+    </view>
+    <view class="item-info">
+      <view class="iInfo-line"><view class="iInfo-title">咨询诊所：</view><view class="iInfo-name">天医诊所</view></view>
+      <view class="iInfo-line"><view class="iInfo-title">咨询医师：</view><view class="iInfo-name">天医诊所</view></view>
+      <view class="iInfo-line"><view class="iInfo-title">咨询内容：</view><view class="iInfo-name">2017-01-03 （星期一）15:30</view></view>
+    </view>
+  </view>
+</view>

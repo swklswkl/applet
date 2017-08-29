@@ -32,6 +32,13 @@ Page({
       selected1: true
     })
   },
+  //点击诊所
+  tapnearclinic: function (e) {
+    var clinic_id = e.currentTarget.dataset.clinic_id
+    wx.navigateTo({
+      url: '/pages/clinics/clinics?clinic_id=' + clinic_id,
+    })
+  },
   //点击医生
   tapdoctor: function (e) {
     var doctor_id = e.currentTarget.dataset.doctor_id

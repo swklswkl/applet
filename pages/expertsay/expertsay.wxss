@@ -1,0 +1,38 @@
+/* expertsay.wxss */
+.header-dw{width: 100%;height: 6vh;background-color: #3297d8;position:absolute;top:0vh;}
+.header-address text{color:#fff; font-weight: bold; position: relative; top: 3.4vh; text-align: center; line-height:6vh; height:6vh;  }
+.header-address{position: relative;top: -3.4vh;left: 10vw;height: 4vh;width: 80vw; color: #fff;text-align: center;}
+.near_clinics_title{padding:2vw 0;background-color:#fff;padding-left:5vw;margin-top:-1vw;}
+.near_clinics_title text{font-weight:bold;width:92vw; height: 8vw; line-height: 8vw; padding-left:2vw;  border-left: 1vw solid #5cbffe; }
+.hot-reconmmed{position:absolute;top:11vw;width:100vw; border-bottom: 1px solid #cccccc;padding-bottom:2vh;}
+.hot-reconmmed-content{width: 100%; height: 43vw;}
+.scroll-hot{ margin-left:5vw;width:40vw;flex: 1;}
+.scroll-hot image{width:40vw; height: 25vw;}
+.scroll-hot .title{width: 40vw;height: 8vw; line-height: 8vw; overflow: hidden;text-overflow:ellipsis;}
+.authorinfo text{font-size: 0.8rem; color: #999999}
+.authorinfo .text1{float: left; text-align: left;}
+.authorinfo .text2{float: right; text-align: right;}
+.uploadWrap{ width:100%; display: flex; display: -webkit-box; flex-direction: column;}
+.newest{position:absolute;top:67vw;width:100vw;}
+.newest-content{width:90vw;border-bottom: 1px solid #cccccc;margin-left: 5vw;height:25vw;padding:3vw 0;}
+.newest-content  image{width:40vw; height: 25vw;}
+.newest-content .title{width: 40vw;height: 16vw; line-height: 8vw; overflow: hidden;text-overflow:ellipsis;}
+.newest-content .authorinfo text{font-size: 0.8rem; color: #999999;margin-top:3vw;}
+.newest-content .authorinfo .text1{float: left; text-align: left;}
+.newest-content .authorinfo .text2{float: right; text-align: right;}
+.newest-left{width:40vw;height:30vw;float:left;}
+.newest-right{width:40vw;height:30vw;float:right;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
