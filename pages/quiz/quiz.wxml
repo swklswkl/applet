@@ -1,2 +1,35 @@
 <!--quiz.wxml-->
-<text>quiz.wxml</text>
+<!--导航栏start-->
+<view class="scroll-view">
+  <scroll-view scroll-x="true">
+    <view class="uploadWrap" scroll-x="true">
+      <block wx:for="{{tag_icon}}" wx:key="item.id">
+        <view class="scroll-hot" bindtap="taparticle" data-id="{{item.id}}">
+          {{item.icon}}
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+<!--导航栏end-->
+<view class="count">
+<text>问答数({{count}})</text>
+</view>
+<block wx:for='{{quizlist}}' wx:key='id'>
+<view bindtap="tapquizlist" data-id="{{item.id}}">
+<view class="authorinfo">
+  <view class="authorinfo-left">
+    <image src="/image/icon/icon.png"></image>
+    <view class="name">{{item.icon}}</view>
+  </view>
+  <view class="authorinfo-right">
+    {{item.time}}
+  </view>
+</view>
+<view class="question">{{item.content}}</view>
+<view class="answer" wx:if="{{item.reply!=null}}">{{item.reply}}</view>
+<view class="answer" wx:else>此问题占未回答</view>
+<view class="quizbottom"></view>
+</view>
+</block>
+<loading  hidden="{{loading}}">加载中...</loading>

@@ -1,6 +1,4 @@
-// expertarticle.js
-var app = getApp()
-var myWebsite = app.globalData.myWebsite;
+// success.js
 Page({
 
   /**
@@ -14,30 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    var article = {
-      id: options.id,
-    }
-    //调用全局加密方法
-    var article = app.mdkey(article);
-    wx.request({
-      url: myWebsite + 'appNewCustomer/Index/expertColumn',
-      data: article,
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'post',
-      success: function (res) {
-        console.log(res.data.data)
-        //时间戳转换转换成时间
-        res.data.data.update_time = app.timechange(res.data.data.update_time);        
-        if (res.statusCode == 200) {
-          that.setData({
-            article: res.data.data,        
-          })
-        }
-      }
-    })
+  
   },
 
   /**

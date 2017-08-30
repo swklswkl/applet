@@ -1,0 +1,17 @@
+<!--quizarticle.wxml-->
+<view class="title">{{article.content}}</view>
+<view class="fenge"></view>
+<view class="authorinfo">
+  <view class="authorinfo-left">
+    <image src="/image/icon/icon.png"></image>
+    <view class="name">牙问答</view>
+  </view>
+  <view class="authorinfo-right">
+    {{article.time}}
+  </view>
+</view>
+<view class="article" wx:if="{{article.message}}" >{{article.message}}</view>
+<view class="article" wx:else>此问题占未回答</view> 
+<view class="article_bottom">
+<view class="jieshi">问答来自用户平台仅做转载</view>
+</view>

@@ -12,7 +12,9 @@
     "pages/clinicdetail/clinicdetail",
     "pages/expertsay/expertsay",
     "pages/quiz/quiz",
-    "pages/expertarticle/expertarticle"
+    "pages/expertarticle/expertarticle",
+    "pages/quizarticle/quizarticle",
+    "pages/personal/personal"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -42,7 +44,7 @@
         "selectedIconPath": "image/icon/appointment_sel.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/personal/personal",
         "text": "个人中心",
         "iconPath": "image/icon/menu_nor.png",
         "selectedIconPath": "image/icon/menu_sel.png"

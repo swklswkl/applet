@@ -11,9 +11,9 @@ Page({
     //分页数据
     page: 0,
     pageSize: 10,
-    hasMoreData: true,
+    hasMoreData: false,
     contentlist: [],
-    hiddenLoading: true,
+    hiddenLoading: false,
   },
   //搜索输入完关键字触发跳转页面
   search: function (event) {
@@ -186,13 +186,12 @@ Page({
   },
   //上拉加载
   onReachBottom: function () {
+    this.setData({
+      hiddenLoading: false
+    });
     if (this.data.hasMoreData) {
       this.nearClinicList()
-    } else {
-      wx.showToast({
-        title: '没有更多数据'
-      })
-    }
+    } 
   }
 
 })

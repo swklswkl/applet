@@ -1,4 +1,5 @@
 <!--search.wxml-->
+<loading hidden="{{hiddenLoading}}">加载中...</loading>
 <view class="body">
   <view class="nav bc_white">
     <view class="{{selected?'red':'default'}}" bindtap="selected">诊所</view>

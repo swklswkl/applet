@@ -1,0 +1,13 @@
+<!--success.wxml-->
+<view class="success">
+<view class="group" style="margin: 100px auto 30px;text-align: center;">
+    <icon type="success" size="70" color="#3396D9"/>
+</view>
+<view class="appInfo" style="text-align:center">
+<view>恭喜您预约成功</view>
+<view>2017年4月17日（周一） 16：00</view>
+<view style="color: #999;font-size: 14px;">请于当天预约时间到诊所就诊</view>
+</view>
+<button style="background:#3396D9;color:#fff;width: 80%;margin: 60px auto 20px;border-radius: 40px;">查看预约记录</button>
+<button style="background:#3396D9;color:#fff;width: 80%;margin: 20px auto;border-radius: 40px;">返回首页</button>
+</view>

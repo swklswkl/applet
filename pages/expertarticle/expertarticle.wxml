@@ -1,20 +1,17 @@
 <!--expertarticle.wxml-->
-<!--头部start-->
-<view class="header-dw">
-  <view class="header-address">
-    <text>专家说</text>
-  </view>
-</view>
-<!--头部end-->
 <view class="authorinfo">
   <view class="authorinfo-left">
-    <image src="src"></image>
+    <image src="/image/icon/icon.png"></image>
     <view class="name">{{article.name}}</view>
   </view>
   <view class="authorinfo-right">
-    {{article.update_time}}
+    {{article.time}}
   </view>
 </view>
 <view class="title">{{article.title}}</view>
-<image src="{{article.pic}}"></image>
+<image class="article_image" wx:if="{{article.pic}}" src="{{article.pic}}"></image>
 <view class="article">{{article.content}}</view>
+<view class="article_bottom">
+<view class="jieshi">文章来自{{article.name}}</view>
+<view class="jieshi">最终解释权归作者所有</view>
+</view>

@@ -1,4 +1,4 @@
-// expertarticle.js
+// quizarticle.js
 var app = getApp()
 var myWebsite = app.globalData.myWebsite;
 Page({
@@ -21,7 +21,7 @@ Page({
     //调用全局加密方法
     var article = app.mdkey(article);
     wx.request({
-      url: myWebsite + 'appNewCustomer/Index/expertColumn',
+      url: myWebsite + 'appNewCustomer/Index/one_quiz',
       data: article,
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -30,10 +30,10 @@ Page({
       success: function (res) {
         console.log(res.data.data)
         //时间戳转换转换成时间
-        res.data.data.update_time = app.timechange(res.data.data.update_time);        
+        res.data.data.update_time = app.timechange(res.data.data.update_time);
         if (res.statusCode == 200) {
           that.setData({
-            article: res.data.data,        
+            article: res.data.data,
           })
         }
       }

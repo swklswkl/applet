@@ -1,6 +1,3 @@
 <!--nousarticle.wxml-->
-
-<body>
-{{content}}
-</body>
+<rich-text nodes="{{content}}" />
 

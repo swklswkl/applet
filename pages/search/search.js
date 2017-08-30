@@ -19,6 +19,7 @@ Page({
     searchLoadingComplete:true,
     contentlist: [],
     doctorlist: [],
+    hiddenLoading: false,
   },
   selected: function (e) {
     this.setData({
@@ -98,12 +99,14 @@ Page({
               if (list.length < that.data.pageSize) {
                 that.setData({
                   clinic: contentlistTem.concat(list),
-                  hasMoreData: false
+                  hasMoreData: false,
+                  hiddenLoading: true,
                 })
               } else {
                 that.setData({
                   clinic: contentlistTem.concat(list),
                   hasMoreData: true,
+                  hiddenLoading: true,
                   page: that.data.page + 1,
                   contentlist: contentlistTem.concat(list)
                 })
@@ -149,13 +152,15 @@ Page({
               doctor: doctorlistTem.concat(doctor_list),
               hasMoreData_doctor: false,
               searchLoadingComplete:false,
+              hiddenLoading:true,
             })
           } else {
             that.setData({
               doctor: doctorlistTem.concat(doctor_list),
               hasMoreData_doctor: true,
               doctor_page: that.data.doctor_page + 1,
-              doctorlist: doctorlistTem.concat(doctor_list)
+              doctorlist: doctorlistTem.concat(doctor_list),
+              hiddenLoading: true,
             })
           }
         }
@@ -204,6 +209,9 @@ Page({
    */
   onReachBottom: function () {
     var that = this
+    that.setData({
+      hiddenLoading: false,
+    })
     if (that.data.hasMoreData) {
       that.ClinicList(that.data.keyword)
     } else {

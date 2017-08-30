@@ -98,7 +98,6 @@
        </view> 
        <view class="clinic_address"><text style="color:#222222">{{item.address}}</text></view>
       </view>
-       
     </view>
   </block>
 </view>

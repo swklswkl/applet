@@ -19,6 +19,6 @@
       
     </view>
   </block>
-  <view class="loading" hidden="{{!hasMoreData}}">正在载入更多...</view>
+  <loading class="loading" hidden="{{!hasMoreData}}">正在载入更多...</loading>
 </view>
 <!--医生-->

@@ -1,1 +1,90 @@
 /* appointment.wxss */
+page{
+  font-family: 微软雅黑;
+  background: #eee;
+}
+.cd-wrap{float:left;width:49%;text-align:center;border-left: 1px solid #eee;}
+.cd-title,.cd-picker{line-height: 40px;}
+.cd-title{color:#444;font-size: 16px;}
+.cd-picker{color:#3396D9}
+.cd-wrap.doctor{float:right}
+.container-hang {  
+    display: flex;  
+    flex-direction: row;  
+    align-items: center;  
+    background-color: white;  
+}  
+  
+.cellDate {  
+    background-color: #3396D9;  
+    color: white;  
+    font-size: 33rpx;  
+    text-align: center;  
+}  
+  
+.contentDate {  
+    display: flex;  
+    flex-direction: column;  
+    background-color: #fff;  
+}  
+  
+.type_no_1_pad {  
+    display: flex;  
+    flex-direction: column;  
+    padding-top: 17rpx;  
+    background-color: #fff;  
+    text-align: center;  
+    width: 100%;  
+    height: 100%;  
+    color: #eee;
+}  
+  
+.type_no_1 { /*type=-1,表示非本月日期*/  
+    font-size: 33rpx;  
+    color: #c9c9c9;  
+}  
+  
+.type_1_pad {   
+    display: flex;  
+    flex-direction: column;  
+    padding-top: 17rpx;  
+    background-color: #3396D9;  
+    align-items: center;  
+    width: 100%;  
+    height: 100%; 
+    border-radius: 100% 
+}  
+  
+.type_1 { /*type=1, 表示今天日期*/  
+    font-size: 33rpx;  
+    color: #fff;  
+}  
+  
+.type_2_pad {  
+    display: flex;  
+    flex-direction: column;  
+    padding-top: 17rpx;  
+    background-color: #fff;  
+    text-align: center;  
+    width: 100%;  
+    height: 100%;
+    color: #3396D9
+}  
+  
+.type_2 { /*type=2, 表示本月非今天日期*/  
+    font-size: 33rpx;  
+    color: #000;  
+}  
+  
+.cell-box {  
+    display:flex;  
+    flex-direction:row;  
+    background-color:#bdbdbd;  
+}  
+  
+.swipter-box {  
+    display: block;  
+    width: 90%;  
+    overflow: hidden; 
+    margin:0px auto; 
+}  

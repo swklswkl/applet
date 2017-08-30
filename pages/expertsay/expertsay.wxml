@@ -1,11 +1,4 @@
 <!--expertsay.wxml-->
-<!--头部start-->
-<view class="header-dw">
-  <view class="header-address">
-    <text>专家说</text>
-  </view>
-</view>
-<!--头部end-->
 <!--热门推荐start-->
 <view class="hot-reconmmed">
   <view class="near_clinics_title">
@@ -15,7 +8,7 @@
     <view class="uploadWrap" scroll-x="true">
       <block wx:for="{{hot}}" wx:key="item.id">
         <view class="scroll-hot" bindtap="taparticle" data-id="{{item.id}}">
-          <image class="picture" src="https://www.eeboo.cn/uploads/banner2.jpg"></image>
+          <image class="picture" src="{{item.pic}}"></image>
           <view class="title">{{item.title}}</view>
           <view class="authorinfo">
             <text class="text1">{{item.name}}</text>
@@ -41,7 +34,7 @@
         </view>
       </view>
       <view class="newest-right">
-        <image class="picture" src="https://www.eeboo.cn/uploads/banner2.jpg"></image>
+        <image class="picture" src="{{item.pic}}"></image>
       </view>
     </view>
   </block>

@@ -4,7 +4,7 @@
 .header-address{position: relative;top: -3.4vh;left: 10vw;height: 4vh;width: 80vw; color: #fff;text-align: center;}
 .near_clinics_title{padding:2vw 0;background-color:#fff;padding-left:5vw;margin-top:-1vw;}
 .near_clinics_title text{font-weight:bold;width:92vw; height: 8vw; line-height: 8vw; padding-left:2vw;  border-left: 1vw solid #5cbffe; }
-.hot-reconmmed{position:absolute;top:11vw;width:100vw; border-bottom: 1px solid #cccccc;padding-bottom:2vh;}
+.hot-reconmmed{position:absolute;width:100vw; border-bottom: 1px solid #cccccc;padding-bottom:2vh;}
 .hot-reconmmed-content{width: 100%; height: 43vw;}
 .scroll-hot{ margin-left:5vw;width:40vw;flex: 1;}
 .scroll-hot image{width:40vw; height: 25vw;}
