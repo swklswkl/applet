@@ -11,8 +11,9 @@ view{
 }
 .userinfo-wrap{height: 70px;}
 .useravatar{
-  height: 70px; width:70px; border-radius: 70px; background:red; float:left;margin-left: 10px
+  height: 70px; width:70px; border-radius: 70px;  float:left;margin-left: 10px
 }
+.useravatar image{height: 70px; width:70px;border-radius: 70px;}
 .userinfo-text{float:left; padding: 15px 20px}
 .username{font-weight: bolder}
 .mobile{color: #ccc}

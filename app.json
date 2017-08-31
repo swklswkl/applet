@@ -14,7 +14,13 @@
     "pages/quiz/quiz",
     "pages/expertarticle/expertarticle",
     "pages/quizarticle/quizarticle",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/changepassword/changepassword",
+    "pages/myadvis/myadvis",
+    "pages/myappoints/myappoints",
+    "pages/feedback/feedback",
+    "pages/login/login",
+    "pages/regist/regist"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -44,7 +50,7 @@
         "selectedIconPath": "image/icon/appointment_sel.png"
       },
       {
-        "pagePath": "pages/personal/personal",
+        "pagePath": "pages/login/login",
         "text": "个人中心",
         "iconPath": "image/icon/menu_nor.png",
         "selectedIconPath": "image/icon/menu_sel.png"

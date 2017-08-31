@@ -1,27 +1,18 @@
-// personal.js
-var app = getApp();
-var myWebsite = app.globalData.myWebsite;
+// regist.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    //调用应用实例的方法获取全局数
-    app.getUserInfo(function (userInfo, Data) {
-      //更新数据
-      console.log(userInfo)
-      that.setData({
-        userInfo: userInfo
-      })
-    })
+  
   },
 
   /**

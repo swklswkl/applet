@@ -1,0 +1,24 @@
+/* regist.wxss */
+.input-content{width:80vw; height: 70vw;margin-left: 10vw;margin-top:10vw;}
+.input-box{width: 100%;height: 10vw;border-bottom:1px solid #cccccc;padding-top:5vw; }
+.input-box input{width: 100%;height: 10vw; }
+.input-box button{box-shadow:2px 2px 5px #4aadfd;color:#fff; position: relative;line-height: 8vw; width: 27vw;height: 8vw;left: 25vw;top:-11.5vw;background-color:#4aadfd;font-size: 0.8rem; }
+.input-box input.qcode{width: 30vw;}
+.input-placeholder{color: #cccccc;text-shadow:2px 2px 5px #cccccc;}
+.button{width:90vw;margin-left:5vw;}
+.button button{background-color: #4aadfd; font-weight: blod; text-shadow:2px 2px 3px #fff;color: #fff;box-shadow:2px 2px 5px #4aadfd; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
