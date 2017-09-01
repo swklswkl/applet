@@ -1,42 +1,36 @@
 <!--personal.wxml-->
 <view class="userinfo">
   <view class="userinfo-wrap">
-    <view class="useravatar"><image src="{{userInfo.avatarUrl}}"></image></view>
+    <view class="useravatar">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
     <view class="userinfo-text">
       <view class="username">{{userInfo.nickName}}</view>
       <view class="mobile"></view>
     </view>
   </view>
 </view>
-<navigator url="/pages/changepassword/changepassword">
-  <view class="personal-line">
+  <view class="personal-line" bindtap="tapchangepwd">
     <image class="pLineIcon" src="../../image/icon/person_password.png"></image>
     <view class="pLineTitle">修改密码</view>
     <image class="arrow" src="../../image/icon/next.png"></image>
   </view>
-</navigator>
-
-<navigator url="/pages/myadvis/myadvis">
-  <view class="personal-line line-wrap" >
+  <view class="personal-line line-wrap" bindtap="tapmyadvis">
+  
     <image class="pLineIcon" src="../../image/icon/person_advisory.png"></image>
     <view class="pLineTitle">我的咨询记录</view>
     <image class="arrow" src="../../image/icon/next.png"></image>
   </view>
-</navigator>
-<navigator url="/pages/myappoints/myappoints">
-  <view class="personal-line line-wrap">
+  <view class="personal-line line-wrap" bindtap="tapappint">
     <image class="pLineIcon" src="../../image/icon/person_appintment.png"></image>
     <view class="pLineTitle">我的预约历史</view>
     <image class="arrow" src="../../image/icon/next.png"></image>
   </view>
-</navigator>
-<navigator url="/pages/feedback/feedback">
-  <view class="personal-line line-wrap">
+  <view class="personal-line line-wrap" bindtap="tapfeedback">
     <image class="pLineIcon" src="../../image/icon/person_feedback.png"></image>
     <view class="pLineTitle">意见反馈</view>
     <image class="arrow" src="../../image/icon/next.png"></image>
   </view>
-</navigator>
 <view class="personal-line logout-wrap" style="height: 150px;position:relative;">
   <button class="logout-button" style="position:absolute;bottom: 10px;width:80%;margin: 5px 8%;">退出登录</button>
 </view>

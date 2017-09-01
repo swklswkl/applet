@@ -50,7 +50,7 @@
         "selectedIconPath": "image/icon/appointment_sel.png"
       },
       {
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/personal/personal",
         "text": "个人中心",
         "iconPath": "image/icon/menu_nor.png",
         "selectedIconPath": "image/icon/menu_sel.png"

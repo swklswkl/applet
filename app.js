@@ -59,6 +59,19 @@ App({
     var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '/';
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
     return (Y + M + D)
+  },
+  //判断是否登录
+  isLogin:function(){
+    wx.showToast({
+      title: '请先登录',
+      success: function (res) {
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '/pages/login/login',
+          })
+        }, 1500)
+      }
+    })
   }
  
 })

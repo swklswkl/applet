@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isLogin:true,
   },
 
   /**
@@ -23,7 +24,51 @@ Page({
       })
     })
   },
-
+  //点击修改密码
+  tapchangepwd:function(){
+    var that = this
+    if(that.data.isLogin){
+      app.isLogin()
+    }else{
+      wx.navigateTo({
+        url: '/pages/changepassowrd/changepassowrd'
+      })
+    }
+  },
+  //点击我的咨询
+  tapmyadvis: function () {
+    var that = this
+    if (that.data.isLogin) {
+      app.isLogin()
+    } else {
+      wx.navigateTo({
+        url: '/pages/myadvis/myadvis'
+      })
+    }
+  },
+  //点击我的预约
+  tapappint: function () {
+    var that = this
+    if (that.data.isLogin) {
+      app.isLogin()
+    } else {
+      wx.navigateTo({
+        url: '/pages/myappoints/myappoints'
+      })
+    }
+  },
+  //点击意见反馈
+  tapfeedback: function () {
+    var that = this
+    if (that.data.isLogin) {
+      app.isLogin()
+    } else {
+      wx.navigateTo({
+        url: '/pages/feedback/feedback'
+      })
+    }
+  },
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

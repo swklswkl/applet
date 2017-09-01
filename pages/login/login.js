@@ -1,4 +1,6 @@
 // login.js
+var app = getApp()
+var myWebsite = app.globalData.myWebsite;
 Page({
 
   /**
@@ -24,9 +26,62 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    //调用应用实例的方法获取全局数
+    app.getUserInfo(function (userInfo, Data) {
+      //更新数据
+      that.setData({
+        userInfo: userInfo
+      })
+    })
   },
-
+  //登录接口
+  formsubmit: function (e) {
+    var that = this;
+    var Data = e.detail.value
+    Data = app.mdkey(Data);
+    wx.request({
+      url: myWebsite + 'appNewCustomer/Customer/loginAction',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: Data,
+      method: 'post',
+      success: function (res) {        
+        //登录成功
+        if (res.data.code == 0) {
+          //设置缓存数据
+          wx.setStorage({
+            key: "userInfo",
+            data: {
+              customer_id: res.data.data.customer_id,
+              mobile: res.data.data.mobile,
+              photo: that.data.userInfo.avatarUrl,
+              nickName: that.data.userInfo.nickName,
+              password: Data.password
+            }
+          })
+          //跳转到上一个界面
+          wx.showToast({
+            title: res.data.msg,
+            success: function (res) {
+              setTimeout(function () {
+                wx.navigateBack({
+                  delta: 1
+                })
+              }, 1500)
+            }
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            image: '/image/icon/failure.png',
+          })
+        }
+       
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,27 +1,29 @@
 <!--login.wxml-->
-<view class="input-content">
-  <view class="title">欢迎登录医牙啊</view>
-  <view class="input-box">
-    <input type="text" placeholder="请输入手机号" placeholder-class/>
-  </view>
-  <view class="input-box">
-    <input class="qcode" type="text" placeholder="请输入密码" placeholder-class/>
-    <image wx:if="{{ischeck}}" src="/image/icon/namecard__eye__open.png"></image>
-    <image wx:else src="/image/icon/namecard__eye__close.png"></image>
-  </view>
-  <view class="rember">
-    <view class="rember_left">
-      <image bindtap="isrember" wx:if="{{ischeck}}" src="/image/icon/remember_nor.png"></image>
-      <image bindtap="isrember" wx:else src="/image/icon/remember_selected.png"></image>
-      <label>记住密码</label>
+<form bindsubmit="formsubmit">
+  <view class="input-content">
+    <view class="title">欢迎登录医牙啊</view>
+    <view class="input-box">
+      <input name='mobile' type="text" placeholder="请输入手机号" placeholder-class/>
     </view>
-    <navigator url="/pages/changepassword/changepassword">
-      <view class="rember_right">
-        忘记密码>>
+    <view class="input-box">
+      <input name='password' class="qcode" type="password" placeholder="请输入密码" placeholder-class/>
+      <image wx:if="{{ischeck}}" src="/image/icon/namecard__eye__open.png"></image>
+      <image wx:else src="/image/icon/namecard__eye__close.png"></image>
+    </view>
+    <view class="rember">
+      <view class="rember_left">
+        <image bindtap="isrember" wx:if="{{ischeck}}" src="/image/icon/remember_nor.png"></image>
+        <image bindtap="isrember" wx:else src="/image/icon/remember_selected.png"></image>
+        <label>记住密码</label>
       </view>
-    </navigator>
+      <navigator url="/pages/regist/regist">
+        <view class="rember_right">
+          还没有账号>>
+        </view>
+      </navigator>
+    </view>
   </view>
-</view>
-<view class="button">
-  <button>登录</button>
-</view>
+  <view class="button">
+    <button formType="submit">登录</button>
+  </view>
+</form>
