@@ -18,27 +18,27 @@ Page({
     //调用应用实例的方法获取全局数
     app.getUserInfo(function (userInfo, Data) {
       //更新数据
-      console.log(userInfo)
       that.setData({
         userInfo: userInfo
       })
     })
+   
   },
   //点击修改密码
   tapchangepwd:function(){
     var that = this
-    if(that.data.isLogin){
+    if (!that.data.cacheUserinfo){
       app.isLogin()
     }else{
       wx.navigateTo({
-        url: '/pages/changepassowrd/changepassowrd'
+        url: '/pages/changepassword/changepassword'
       })
     }
   },
   //点击我的咨询
   tapmyadvis: function () {
     var that = this
-    if (that.data.isLogin) {
+    if (!that.data.cacheUserinfo) {
       app.isLogin()
     } else {
       wx.navigateTo({
@@ -49,7 +49,7 @@ Page({
   //点击我的预约
   tapappint: function () {
     var that = this
-    if (that.data.isLogin) {
+    if (!that.data.cacheUserinfo) {
       app.isLogin()
     } else {
       wx.navigateTo({
@@ -60,7 +60,7 @@ Page({
   //点击意见反馈
   tapfeedback: function () {
     var that = this
-    if (that.data.isLogin) {
+    if (!that.data.cacheUserinfo) {
       app.isLogin()
     } else {
       wx.navigateTo({
@@ -68,7 +68,31 @@ Page({
       })
     }
   },
- 
+  //退出登录
+  exitLogin:function(){
+    try {
+      wx.removeStorage({
+        key: 'userInfo',
+        success: function(res) {
+          console.log(res)
+          wx.showToast({
+            title: "已退出医牙啊",
+            success: function (res) {
+              setTimeout(function () {
+                wx.reLaunch({
+                  url: '/pages/index/index'
+                })
+              }, 1500)
+            }
+          })
+        }
+      })
+     
+    } catch (e) {
+      console.log('服务错误')
+      // Do something when catch error
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -80,7 +104,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    //获取缓存信息
+    var that = this
+       wx.getStorage({
+        key: 'userInfo',
+        success: function(res) {
+          if (res.data) {
+            // Do something with return value
+            that.setData({
+              cacheUserinfo: res.data
+            })
+          }
+        }
+      })
   },
 
   /**

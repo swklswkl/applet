@@ -3,10 +3,10 @@
   <view class="input-content">
     <view class="title">欢迎登录医牙啊</view>
     <view class="input-box">
-      <input name='mobile' type="text" placeholder="请输入手机号" placeholder-class/>
+      <input name='mobile' type="text" placeholder="请输入手机号" value="{{loginMobile}}" placeholder-class/>
     </view>
     <view class="input-box">
-      <input name='password' class="qcode" type="password" placeholder="请输入密码" placeholder-class/>
+      <input name='password' class="qcode" type="password" placeholder="请输入密码" value="{{loginPassword}}" placeholder-class/>
       <image wx:if="{{ischeck}}" src="/image/icon/namecard__eye__open.png"></image>
       <image wx:else src="/image/icon/namecard__eye__close.png"></image>
     </view>

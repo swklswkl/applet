@@ -2,11 +2,11 @@
 <view class="userinfo">
   <view class="userinfo-wrap">
     <view class="useravatar">
-      <image src="{{userInfo.avatarUrl}}"></image>
+      <image src="{{cacheUserinfo.photo}}"></image>
     </view>
     <view class="userinfo-text">
-      <view class="username">{{userInfo.nickName}}</view>
-      <view class="mobile"></view>
+      <view class="username">{{cacheUserinfo.nickName}}</view>
+      <view class="mobile">{{cacheUserinfo.mobile}}</view>
     </view>
   </view>
 </view>
@@ -32,5 +32,5 @@
     <image class="arrow" src="../../image/icon/next.png"></image>
   </view>
 <view class="personal-line logout-wrap" style="height: 150px;position:relative;">
-  <button class="logout-button" style="position:absolute;bottom: 10px;width:80%;margin: 5px 8%;">退出登录</button>
+  <button bindtap="exitLogin" class="logout-button" style="position:absolute;bottom: 10px;width:80%;margin: 5px 8%;">退出登录</button>
 </view>

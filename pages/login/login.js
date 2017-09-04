@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  ischeck:true,
+  ischeck:false,
   },
 //点击记住密码
   isrember:function(){
@@ -34,12 +34,25 @@ Page({
         userInfo: userInfo
       })
     })
+    //获取缓存的用户名密码
+    try {
+      var value = wx.getStorageSync('loginUserInfo')
+      if (value) {
+        // Do something with return value
+        that.setData({
+          loginMobile: value.mobile,
+          loginPassword: value.password
+        })
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
   },
   //登录接口
   formsubmit: function (e) {
     var that = this;
-    var Data = e.detail.value
-    Data = app.mdkey(Data);
+    var getData = e.detail.value
+    var Data = app.mdkey(getData);   
     wx.request({
       url: myWebsite + 'appNewCustomer/Customer/loginAction',
       header: {
@@ -50,17 +63,20 @@ Page({
       success: function (res) {        
         //登录成功
         if (res.data.code == 0) {
-          //设置缓存数据
-          wx.setStorage({
-            key: "userInfo",
-            data: {
+          //设置用户信息缓存数据
+          try {
+            wx.setStorageSync('userInfo', {
               customer_id: res.data.data.customer_id,
               mobile: res.data.data.mobile,
               photo: that.data.userInfo.avatarUrl,
               nickName: that.data.userInfo.nickName,
-              password: Data.password
-            }
-          })
+            })
+          } catch (e) {
+          }
+          //设置记住密码缓存用户名密码
+          if(that.data.ischeck==false){
+            wx.setStorageSync("loginUserInfo", getData)
+          }
           //跳转到上一个界面
           wx.showToast({
             title: res.data.msg,
