@@ -1,1 +1,183 @@
 /* advisory.wxss */
+page{background-color: #EEF2F5;}
+
+.icon{
+  width: 90vw;
+  height: 7vh;
+  background: white;
+  position: relative;
+  top: 3vh;
+  left: 5vw;
+  color: red;
+}
+.icon_set{
+  color: #60ACDF; 
+  font-weight:bold;
+  font-family: 楷体;
+  text-align: center;
+  line-height: 7vh;
+}
+.picker{
+    width: 25vw;
+    position: relative;
+    left: 37vw;
+    top: 1.5vh;
+}
+.picker input{
+  color: #60ACDF;
+  position: relative;
+  right: 1.8vw;
+  font-weight:bold;
+  font-family: 楷体;
+  font-size: 3.1vh;
+}
+.section{  
+    clear: both;  
+    width:100%;  
+    margin: 2rem auto;  
+}  
+.open{
+  padding:2vw 0;
+  height: 7vh;
+  line-height: 7vh;
+  position: relative;
+  top: 6vh;
+}
+.form-group{  
+    float: right;  
+    width: 70%;
+    font-family: 楷体;
+} 
+.section__title{  
+    float: left;  
+    width:30%;
+    position: relative;
+    left: 5vmin; 
+    font-family: 楷体; 
+} 
+.a{
+  position: relative;
+  top:1vmin;
+}
+.content{
+  height: 70vmin;
+  background: white;
+  clear: both;
+}
+.content textarea{
+  padding:1vw;
+  position: relative;
+  left: 5vmin;
+  top: 9vmin;
+  border-radius:0vmin 2vmin 2vmin 2vmin;
+  border:0.1vmin solid #B9B9B9;
+  width: 90vmin;
+  height: 28vmin;
+  font-size: 4vmin;
+  font-family: 楷体;
+}
+.textarea-placeholder{
+  clear: both;
+}
+.addpic{
+  font-size: 4.5vmin;
+  font-family: 楷体;
+  width: 20vw;
+  position: relative;
+  top: 12vh;
+  left: 5vw;
+}
+.p1{
+  width: 20vmin;
+  height: 12vmin;
+  position: relative;
+  top: 12vmin;
+  left: 25vmin;
+}
+.p1 button{
+  width: 12vmin;
+  height: 12vmin;
+  background-image: url('/image/icon/message_addpic.png');
+  background-repeat:round;
+}
+.i1{
+  width: 20vmin;
+  height: 12vmin;
+  position: relative;
+  left: 25vmin;
+  bottom: 12vmin;
+  /* background: pink; */
+}
+.i1 image{
+  width: 13vmin;
+  height: 14vmin;
+  position: relative;
+  left: 3.5vmin;
+  bottom: 13vmin;
+  /* background: firebrick; */
+}
+.p2{
+  width: 20vmin;
+  height: 12vmin;
+  position: relative;
+  left: 45vmin;
+  bottom: 0.1vmin;
+}
+.p2 button{
+  width: 12vmin;
+  height: 12vmin;
+  background-image: url('/image/icon/message_addpic.png');
+  background-repeat:round;
+}
+.i2{
+  width: 20vmin;
+  height: 12vmin;
+  position: relative;
+  left: 45vmin;
+  bottom: 24vmin;
+  /* background: pink; */
+}
+.i2 image{
+  width: 13vmin;
+  height: 14vmin;
+  position: relative;
+  left: 3.5vmin;
+  bottom: 13vmin;
+  /* background: firebrick; */
+}
+.p3{
+  width: 20vmin;
+  height: 12vmin;
+  position: relative;
+  left: 65vmin;
+  bottom: 12.1vmin;
+}
+.p3 button{
+  width: 12vmin;
+  height: 12vmin;
+  background-image: url('/image/icon/message_addpic.png');
+  background-repeat:round;
+}
+.i3{
+  width: 20vmin;
+  height: 12vmin;
+  position: relative;
+  left: 65vmin;
+  bottom: 36vmin;
+  /* background: pink; */
+}
+.i3 image{
+  width: 13vmin;
+  height: 14vmin;
+  position: relative;
+  left: 3.5vmin;
+  bottom: 13.1vmin;
+  /* background: firebrick; */
+}
+.input-text{  
+    border: 1px solid #ddd;  
+}  
+.button{  
+    border: 1px solid #1aad19;  
+    border-radius: 2px;  
+} 

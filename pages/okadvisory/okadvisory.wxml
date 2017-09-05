@@ -1,0 +1,17 @@
+<!--pages/okadvisory/okadvisory.wxml-->
+<view class="ok">
+  <image src="/image/icon/message_icon_selected.png"></image>
+</view>
+
+<view class="t1">您的咨询已提交成功</view>
+
+<view class="t2">医师将尽快为你解答</view>
+
+<view class="btn1">
+  <button bindtap="tapmyadvis" hover-class="btn">查看咨询记录</button>
+</view>
+
+<view class="btn2">
+  <button bindtap="exitindex" hover-class="btn">返回首页</button>
+</view>
+

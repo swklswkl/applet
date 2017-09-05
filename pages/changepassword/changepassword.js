@@ -47,7 +47,7 @@ Page({
             title: res.data.msg,
             success: function (res) {
               setTimeout(function () {
-                wx.navigateTo({
+                wx.switchTab({
                   url: '/pages/personal/personal',
                 })
               }, 1500)

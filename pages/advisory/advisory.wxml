@@ -1,2 +1,63 @@
 <!--advisory.wxml-->
-<text>advisory.wxml</text>
+<view id="adduser">  
+    <form bindsubmit="formSubmit"> 
+        <view class="icon" style="color:red;">
+          <picker bindchange="bindPickerChange" value="index" range="{{objectArray}}">
+          <view class="icon_set" style="display:{{tag1}};">点击选择</view>  
+          <view class="picker" style="display:{{tag2}};">  
+              <input type="hidden"  disabled="true" value="{{array[index].icon}}"/>
+              <input type="hidden" style="display:none" name="tag_id" value="{{array[index].id}}"/>
+          </view>  
+          </picker>
+        </view>
+
+        <view class="section open">  
+            <view class="section__title">是否公开</view>  
+            <view class='form-group'>  
+                <radio-group name="open">  
+                  <label><radio value="0" checked/>是</label>  
+                  <label><radio value="1"/>否</label>  
+                </radio-group>  
+            </view>      
+        </view> 
+
+        <view class="section content">
+          <view class="section__title a">咨询问题</view>
+          <textarea placeholder="请简单的描述下症状" placeholder-class value="{{contents}}" name="content"/>
+          <view class="addpic">添加照片</view>
+            <view class="p1">
+              <button bindtap="bindViewTap1" style="display:{{p1}};"></button>
+            </view>
+            <view class="p2">
+              <button bindtap="bindViewTap2" style="display:{{p2}};"></button> 
+            </view> 
+            <view class="p3">
+              <button bindtap="bindViewTap3" style="display:{{p3}};"></button>
+            </view>
+            <view class="i1">
+              <image src="{{avatarUrl1}}" name="pic" style="display:{{i1}};"></image>
+            </view>
+            <view class="i2">
+              <image src="{{avatarUrl2}}" name="pic" style="display:{{i2}};"></image>
+            </view>
+            <view class="i3">
+              <image src="{{avatarUrl3}}" name="pic" style="display:{{i3}};"></image>
+            </view>
+        </view>
+
+        <view class="section btn-area">  
+            <button formType="submit">提交</button>  
+        </view>  
+    </form>  
+  
+     <!-- 黑框提示并消失 -->  
+     <toast hidden="{{toast1Hidden}}" bindchange="toast1Change">  
+        {{notice_str}}  
+    </toast>   
+    <!-- 确认框 及 提示框 -->  
+    <view class="page__bd">  
+        <modal title="确认" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="confirm_one" bindcancel="cancel_one">  
+            确认提交么？  
+        </modal>  
+    </view>  
+</view> 

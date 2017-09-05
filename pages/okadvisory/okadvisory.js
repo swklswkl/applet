@@ -1,5 +1,5 @@
-// feedback.js
-var app = getApp()
+// pages/okadvisory/okadvisory.js
+var app = getApp();
 var myWebsite = app.globalData.myWebsite;
 Page({
 
@@ -7,48 +7,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    cacheUserinfo:''
   },
-
+  //点击我的咨询
+  tapmyadvis: function () {
+    var that = this
+    if (!that.data.cacheUserinfo) {
+      app.isLogin()
+    } else {
+      wx.navigateTo({
+        url: '/pages/myadvis/myadvis'
+      })
+    }
+  },
+  //返回首页
+  exitindex: function () {
+    var that = this
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
-  //注册
-  bindFormSubmit: function (e) {
     var that = this;
-    var Data = e.detail.value
-    Data = app.mdkey(Data);
-    wx.request({
-      url: myWebsite + 'appNewCustomer/Personal/feedback',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: Data,
-      method: 'post',
+    wx.getStorage({
+      key: 'userInfo',
       success: function (res) {
-        if (res.data.code == 0) {
-          wx.showToast({
-            title: res.data.msg,
-            success: function (res) {
-              setTimeout(function () {
-                wx.navigateBack({
-                  //url: '/pages/personal/personal',
-                })
-              }, 1500)
-            }
-          })
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            image: '/image/icon/failure.png',
+        if (res.data) {
+          // Do something with return value
+          that.setData({
+            cacheUserinfo: res.data,
           })
         }
       }
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

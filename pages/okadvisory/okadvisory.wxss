@@ -1,0 +1,53 @@
+/* pages/okadvisory/okadvisory.wxss */
+page{background-color: #EEF2F5;}
+.ok{
+  height: 40vmin;
+}
+.ok image{
+  width: 15vmin;
+  height: 15vmin;
+  position: relative;
+  top: 25vmin;
+  left: 42vmin;
+}
+.t1{
+  font-weight: bold;
+  width: 50vmin;
+  position: relative;
+  left: 29.5vmin;
+  top: 10vmin;
+  font-family: 楷体;
+}
+.t2{
+  font-size: 4vmin;
+  font-family: 楷体;
+  width: 40vmin;
+  position: relative;
+  left: 32vmin;
+  top: 12vmin;
+}
+.btn1{
+  position: relative;
+  top: 27vmin;
+}
+.btn1 button{
+  border-radius: 20vmin;
+  width: 70vmin;
+  background: #3297da;
+  font-family: 楷体;
+  color: white;
+}
+.btn2{
+  position: relative;
+  top: 30vmin;
+}
+.btn2 button{
+  border-radius: 20vmin;
+  width: 70vmin;
+  background: #3297da;
+  font-family: 楷体;
+  color: white;
+} 
+.btn{
+  background-color: red;
+}

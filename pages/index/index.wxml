@@ -10,7 +10,7 @@
 </view>
 <!--头部end-->
 <!--轮播图start-->
-<swiper  autoplay="true" interval="2000" duration="1000">  
+<swiper  autoplay="true" interval="2000" duration="1000" style="height:200px">  
   <block wx:for="{{indexInfo.banner}}" wx:key="id">  
     <swiper-item> 
       <navigator url="{{item.advpic}}" hover-class="navigator-hover">  

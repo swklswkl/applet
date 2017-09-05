@@ -20,6 +20,7 @@
     "pages/myappoints/myappoints",
     "pages/feedback/feedback",
     "pages/login/login",
+    "pages/okadvisory/okadvisory",
     "pages/regist/regist"
   ],
   "window": {

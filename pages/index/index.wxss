@@ -5,10 +5,10 @@ page{background-color: #eef3f4;}
 .message-icon{position: relative;top: -7.6vh;left: 90vw;height: 4vh;width: 6vw; }
 .header-address{position: relative;top: -3.4vh;left: 10vw;height: 4vh;width: 80vw; color: #fff;text-align: center;}
 .location-icon{position: relative;top: 1vh;left: 4vw;height: 4vh;width: 6vw; }
-.slide-image{  width: 100%;height: 25vh;  } 
+.slide-image{  width: 100%;height: 32vh;  } 
 .search{padding:0 4vw 0 8vw; color: #fff;font-size: 1rem;border-radius: 3vh;  width: 68vw; line-height:6vh; height: 6vh;position: relative;top: -2vh;left: 10vw; background-color: #000; opacity: 0.5;}
 .search-icon{z-index: 1; position: relative;top: 3vh;left: 12vw;width: 4vw; line-height:3vh; height: 3vh;}
-.content_icon{width: 100vw; height: 40vh; background-color: #eef3f4;}
+.content_icon{width: 100vw; height: 42vh; background-color: #eef3f4;}
 .list-icon{float:left; width: 20vw; height: 20vw; text-align:center;}
 .list-icon image{ width: 12vw; height: 12vw;  margin:4vw 4vw 0 4vw;}
 .list-icon text{color: #8f8f8f;opacity:1;font-size: 0.8rem; }
