@@ -21,7 +21,8 @@
     "pages/feedback/feedback",
     "pages/login/login",
     "pages/okadvisory/okadvisory",
-    "pages/regist/regist"
+    "pages/regist/regist",
+    "pages/success/success"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -1,53 +1,39 @@
 <!--appointment.wxml-->
-  <view class="clinic-doctor" style="width: 90%;margin: 20px auto;background: #fff;height: 80px">
-
-  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-    <view class="picker">
+<view class="clinic-doctor" style="width: 90%;margin: 20px auto;background: #fff;height: 80px">
+  <view class="picker">
     <view class="cd-wrap">
       <view class="cd-title">就诊诊所</view>
       <view class="cd-picker">
-      {{multiArray[0][multiIndex[0]]}}
+        {{clinicName}}
       </view>
     </view>
-    <view class="cd-wrap doctor">
-      <view class="cd-title">看诊医生</view>
-      <view class="cd-picker">
-      {{multiArray[1][multiIndex[1]]}}
-      </view>
-    </view>
-    </view>
-  </picker>
   </view>
-
-  <view class="calendar" style="width:100%">
-      
-    <swiper bindchange="swiperChange" class="swipter-box" duration="300" style="height:{{swiperHeight}}rpx">
-
-        <swiper-item wx:for="{{monthDatas}}" wx:for-item="monthData">  
-          <view class="classname" style="width:100%;margin: 0px auto;text-align:center;color:#fff;background: #3396D9;padding-top:10px">{{monthDatas[0].data[19].month}}月</view>
-          <view class="container-hang" style="width:100%;margin: 0px auto;">
-              <text wx:for="{{dateTitles}}" wx:for-item="dateItem" class="cellDate"  
-              style="width:{{titleCellWidth}}px;padding:6rpx 0 6rpx 0">{{dateItem}}</text>  
-          </view>    
-            <view class="cell-box" wx:for="{{monthData.dataHarr}}" wx:for-index="i">  
-                <view wx:for="{{[0, 1, 2, 3, 4, 5, 6]}}" wx:for-index="j">  
-                <picker mode="time" value="{{monthData.data[i*7 + j].dateShow + time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
-                      <view class="contentDate" style="width:{{dateCellWidth}}px;height:{{dateCellWidth}}px">  
-                          <view class="type_no_1_pad" wx:if="{{monthData.data[i*7 + j].type == -1}}">  
-                              <text class="type_no_1">{{monthData.data[i*7 + j].dateShow}}</text>  
-                          </view>  
-                          <view class="type_1_pad" wx:if="{{monthData.data[i*7 + j].type == 1}}">  
-                              <text class="type_1">{{monthData.data[i*7 + j].dateShow}}</text>  
-                          </view>  
-                          <view class="type_2_pad" wx:if="{{monthData.data[i*7 + j].type == 2}}">  
-                              <text class="type_2">{{monthData.data[i*7 + j].dateShow}}</text>  
-                          </view>  
-                      </view>
-                </picker>                      
-                </view> 
+</view>
+<view class="calendar" style="width:100%">
+  <swiper bindchange="swiperChange" class="swipter-box" duration="300" style="height:{{swiperHeight}}rpx">
+    <swiper-item wx:for="{{monthDatas}}" wx:for-item="monthData" wx:key='day'>
+      <view class="classname" style="width:100%;margin: 0px auto;text-align:center;color:#fff;background: #3396D9;padding-top:10px">{{monthDatas[0].data[19].month}}月</view>
+      <view class="container-hang" style="width:100%;margin: 0px auto;">
+        <text wx:for="{{dateTitles}}" wx:for-item="dateItem" wx:key='day' class="cellDate" style="width:{{titleCellWidth}}px;padding:6rpx 0 6rpx 0">{{dateItem}}</text>
+      </view>
+      <view class="cell-box" wx:for="{{monthData.dataHarr}}" wx:for-index="i" wx:key='day'>
+        <view wx:for="{{[0, 1, 2, 3, 4, 5, 6]}}" wx:for-index="j" wx:key='day'>
+          <view class="contentDate" style="width:{{dateCellWidth}}px;height:{{dateCellWidth}}px">
+            <view class="type_no_1_pad" wx:if="{{monthData.data[i*7 + j].type == -1}}">
+              <text class="type_no_1">{{monthData.data[i*7 + j].dateShow}}</text>
             </view>
-        </swiper-item>  
-    </swiper>  
-  </view>
-  
-    <text style="width:{{windowWidth}}px;height:2rpx;background-color:#bdbdbd" />  
+            <view class="type_1_pad" wx:if="{{monthData.data[i*7 + j].type == 1}}">
+              <text class="type_1">{{monthData.data[i*7 + j].dateShow}}</text>
+            </view>
+            <view class="type_2_pad" wx:if="{{monthData.data[i*7 + j].type == 2}}">
+              <picker mode="selector" range='{{timepicker}}' bindchange="bindTimeChange">
+                <view bindtap="bindTimeclick" data-data='{{monthData.data[i*7 + j]}}'  class="type_2">{{monthData.data[i*7 + j].dateShow}}</view>
+              </picker>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<text style="width:{{windowWidth}}px;height:2rpx;background-color:#bdbdbd" />

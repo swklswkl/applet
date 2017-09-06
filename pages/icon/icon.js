@@ -44,7 +44,6 @@ Page({
       },
       method: 'post',
       success: function(res) {
-        console.log(res)
         if (res.statusCode == 200) {
           var list = res.data.data.list
           var contentlistTem = that.data.contentlist

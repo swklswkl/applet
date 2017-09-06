@@ -42,6 +42,7 @@ Page({
   },
   //跳转到预约界面
   appoint: function () {
+    var that = this
     wx.switchTab({
       url: '/pages/appointment/appointment',
     })

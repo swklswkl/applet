@@ -3,7 +3,7 @@ page{
   font-family: 微软雅黑;
   background: #eee;
 }
-.cd-wrap{float:left;width:49%;text-align:center;border-left: 1px solid #eee;}
+.cd-wrap{float:left;width:100%;text-align:center;}
 .cd-title,.cd-picker{line-height: 40px;}
 .cd-title{color:#444;font-size: 16px;}
 .cd-picker{color:#3396D9}
