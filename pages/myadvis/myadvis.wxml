@@ -1,5 +1,6 @@
 <!--myadvis.wxml-->
 <block wx:for='{{advislist}}' wx:key='id'>
+<navigator url="/pages/chatroom/chatroom">
 <view class="array-wrap">
   <view class="item-line">
     <view class="item-title">
@@ -13,4 +14,5 @@
     </view>
   </view>
 </view>
+</navigator>
  </block>

@@ -22,7 +22,9 @@
     "pages/login/login",
     "pages/okadvisory/okadvisory",
     "pages/regist/regist",
-    "pages/success/success"
+    "pages/success/success",
+    "pages/appointments/appointments",
+    "pages/chatroom/chatroom"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -105,8 +105,8 @@ page{background-color: #EEF2F5;}
   height: 12vmin;
   position: relative;
   left: 25vmin;
-  bottom: 12vmin;
-  /* background: pink; */
+    bottom: 12vmin;  
+   /* background: pink;  */
 }
 .i1 image{
   width: 13vmin;
@@ -135,7 +135,7 @@ page{background-color: #EEF2F5;}
   position: relative;
   left: 45vmin;
   bottom: 24vmin;
-  /* background: pink; */
+   /* background: pink;  */
 }
 .i2 image{
   width: 13vmin;
@@ -143,7 +143,7 @@ page{background-color: #EEF2F5;}
   position: relative;
   left: 3.5vmin;
   bottom: 13vmin;
-  /* background: firebrick; */
+   /* background: firebrick;  */
 }
 .p3{
   width: 20vmin;
@@ -163,8 +163,8 @@ page{background-color: #EEF2F5;}
   height: 12vmin;
   position: relative;
   left: 65vmin;
-  bottom: 36vmin;
-  /* background: pink; */
+   bottom: 36vmin; 
+   /* background: pink;  */
 }
 .i3 image{
   width: 13vmin;

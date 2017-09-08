@@ -60,19 +60,17 @@ Page({
       },
       data: Data,
       method: 'post',
-      success: function (res) {        
+      success: function (res) {      
         //登录成功
         if (res.data.code == 0) {
-          //设置用户信息缓存数据
-          try {
+          //设置用户信息缓存数据          
             wx.setStorageSync('userInfo', {
               customer_id: res.data.data.customer_id,
               mobile: res.data.data.mobile,
               photo: that.data.userInfo.avatarUrl,
               nickName: that.data.userInfo.nickName,
+              hx_service_id: res.data.data.hx_service_id
             })
-          } catch (e) {
-          }
           //设置记住密码缓存用户名密码
           if(that.data.ischeck==false){
             wx.setStorageSync("loginUserInfo", getData)

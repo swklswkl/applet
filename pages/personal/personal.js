@@ -74,7 +74,6 @@ Page({
       wx.removeStorage({
         key: 'userInfo',
         success: function(res) {
-          console.log(res)
           wx.showToast({
             title: "已退出医牙啊",
             success: function (res) {

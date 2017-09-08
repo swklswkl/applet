@@ -31,6 +31,9 @@ Page({
     var clinic = {
       clinic_id: options.clinic_id,
     }
+    that.setData({
+      clinic_id: options.clinic_id,
+    })
     //调用全局加密方法
     var clinic = app.mdkey(clinic);
     wx.request({
@@ -53,8 +56,8 @@ Page({
   },
   //跳转到预约界面
   appoint: function () {
-    wx.switchTab({
-      url: '/pages/appointment/appointment',
+    wx.navigateTo({
+      url: '/pages/appointments/appointments?clinic_id=' + this.data.clinic_id,
     })
   },
   //跳转到咨询界面

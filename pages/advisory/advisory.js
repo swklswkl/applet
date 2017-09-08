@@ -32,19 +32,21 @@ Page({
       success: function (res) {
         // 获取成功,将获取到的地址赋值给临时变量
         var tempFilePaths = res.tempFilePaths;
+
+        that.setData({
+          //将临时变量赋值给已经在data中定义好的变量
+          avatarUrl1: tempFilePaths[0],
+          p1: 'none',
+          i1: 'block'
+        })
+
         wx.uploadFile({
-          url: 'https://www.eeboo.cn/appNewCustomer/Common/pictureUp', //仅为示例，非真实的接口地址
+          url: myWebsite+'appNewCustomer/Common/pictureUp', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {
             var data = JSON.parse(res.data)
-            console.log(data.data)
-            that.setData({
-              //将临时变量赋值给已经在data中定义好的变量
-              avatarUrl1: data.data,
-              p1: 'none',
-              i1: 'block'
-            })
+            //console.log(data.data)
           }
         })
       },
@@ -66,19 +68,20 @@ Page({
       success: function (res) {
         // 获取成功,将获取到的地址赋值给临时变量
         var tempFilePaths = res.tempFilePaths;
+
+        that.setData({
+          //将临时变量赋值给已经在data中定义好的变量
+          avatarUrl2: tempFilePaths[0],
+          p2: 'none',
+          i2: 'block'
+        })
+
         wx.uploadFile({
-          url: 'https://www.eeboo.cn/appNewCustomer/Common/pictureUp', //仅为示例，非真实的接口地址
+          url: myWebsite +'appNewCustomer/Common/pictureUp', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {
             var data = JSON.parse(res.data)
-            console.log(data.data)
-            that.setData({
-              //将临时变量赋值给已经在data中定义好的变量
-              avatarUrl2: data.data,
-              p2: 'none',
-              i2: 'block'
-            })
           }
         })
       },
@@ -100,19 +103,21 @@ Page({
       success: function (res) {
         // 获取成功,将获取到的地址赋值给临时变量
         var tempFilePaths = res.tempFilePaths;
+
+        that.setData({
+          //将临时变量赋值给已经在data中定义好的变量
+          avatarUrl3: tempFilePaths[0],
+          p3: 'none',
+          i3: 'block'
+        })
+
         wx.uploadFile({
-          url: 'https://www.eeboo.cn/appNewCustomer/Common/pictureUp', //仅为示例，非真实的接口地址
+          url: myWebsite +'appNewCustomer/Common/pictureUp', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {
             var data = JSON.parse(res.data)
             console.log(data.data)
-            that.setData({
-              //将临时变量赋值给已经在data中定义好的变量
-              avatarUrl3: data.data,
-              p3: 'none',
-              i3: 'block'
-            })
           }
         })
       },
@@ -170,7 +175,7 @@ Page({
       }
     }),
     wx.request({
-      url: 'https://www.eeboo.cn/appNewCustomer/Index/tag_icon', 
+      url: myWebsite +'appNewCustomer/Index/tag_icon', 
       header: {
         'content-type': 'application/json'
       },
@@ -230,7 +235,6 @@ Page({
               }
               //调用全局加密方法
               var formData = app.mdkey(advisory);
-              console.log(formData);
               wx.request({
                   url: myWebsite+'appNewCustomer/Advisory/consult',
                   data: formData,
@@ -239,7 +243,6 @@ Page({
                   'content-type': 'application/x-www-form-urlencoded'
                   },
                   success: function (res) {
-                      console.log(res.data)
                       //that.modalTap();
                       if (res.data.code == 0){
                           that.setData({
