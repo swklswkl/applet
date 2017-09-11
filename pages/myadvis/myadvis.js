@@ -28,7 +28,6 @@ Page({
   },
   //接口我的咨询
   myadvisList:function(){
-    
     var that = this
     var quizlist = {
       customer_id: that.data.cacheUserinfo.customer_id,
@@ -45,7 +44,6 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res)
         if (res.statusCode == 200) {
           var list = res.data.data.list
           var contentlistTem = that.data.contentlist

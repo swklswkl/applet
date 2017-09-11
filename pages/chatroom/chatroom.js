@@ -50,8 +50,33 @@ Page({
             chatMsg: wx.getStorageSync(options.your + myName) || []
         })
         wx.setNavigationBarTitle({
-            title: that.data.yourname
+            title: '客服'
         })
+        //创建连接
+        var conn = new WebIM.connection({
+          https: WebIM.config.https,
+          url: WebIM.config.xmppURL,
+          isAutoLogin: WebIM.config.isAutoLogin,
+          isMultiLoginSessions: WebIM.config.isMultiLoginSessions
+        });
+        //登录
+        var options = {
+          apiUrl: WebIM.config.apiURL,
+          user: that.data.myName,
+          pwd: that.data.myName,
+          appKey: WebIM.config.appkey,
+          success: function (token) {
+            var token = token.access_token;
+            var options = {
+              apiUrl: WebIM.config.apiURL,
+              user: that.data.myName,
+              accessToken: token,
+              appKey: WebIM.config.appkey
+            };
+          },
+        };
+        
+        conn.open(options);
     },
     onShow: function () {
         var that = this
@@ -71,227 +96,25 @@ Page({
         }
         that.setData(setUserMessage)
     },
-    //***************** 录音 begin ***************************
-    changedTouches: null,
-    toggleRecordModal: function (e) {
-        this.setData({
-            recordStatus: this.data.recordStatus == RecordStatus.HIDE ? RecordStatus.SHOW : RecordStatus.HIDE
-        })
-    },
-    toggleWithoutAction: function (e) {
-        console.log('toggleWithoutModal 拦截请求不做处理')
-    },
-    handleRecordingMove: function (e) {
-        var touches = e.touches[0]
-        var changedTouches = this.changedTouches
-
-        if (!this.changedTouches) {
-            return
-        }
-        // 无效
-        // var changedTouches = e.changedTouches[0]
-        // console.log(changedTouches.pageY, touches.pageY)
-
-        if (this.data.recordStatus == RecordStatus.SWIPE) {
-            if (changedTouches.pageY - touches.pageY < 20) {
-                this.setData({
-                    recordStatus: RecordStatus.HOLD
-                })
-            }
-        }
-        if (this.data.recordStatus == RecordStatus.HOLD) {
-            if (changedTouches.pageY - touches.pageY > 20) {
-                this.setData({
-                    recordStatus: RecordStatus.SWIPE
-                })
-            }
-        }
-
-    },
-    handleRecording: function (e) {
-        var self = this
-        console.log('handleRecording')
-        this.changedTouches = e.touches[0]
-        this.setData({
-            recordStatus: RecordStatus.HOLD
-        })
-        wx.startRecord({
-            fail: function (err) {
-                // 时间太短会失败
-                console.log(err)
-            },
-            success: function (res) {
-                console.log('success')
-                // 取消录音发放状态 -> 退出不发送
-                if (self.data.recordStatus == RecordStatus.RELEASE) {
-                    console.log('user canceled')
-                    return
-                }
-                // console.log(tempFilePath)
-                self.uploadRecord(res.tempFilePath)
-            },
-            complete: function () {
-                console.log("complete")
-                this.handleRecordingCancel()
-            }.bind(this)
-        })
-
-        setTimeout(function () {
-            //超时 
-            self.handleRecordingCancel()
-        }, 100000)
-    },
-    handleRecordingCancel: function () {
-        console.log('handleRecordingCancel')
-        // 向上滑动状态停止：取消录音发放
-        if (this.data.recordStatus == RecordStatus.SWIPE) {
-            this.setData({
-                recordStatus: RecordStatus.RELEASE
-            })
-        } else {
-            this.setData({
-                recordStatus: RecordStatus.HIDE
-            })
-        }
-        wx.stopRecord()
-    },
-    stopRecord: function (e) {
-        let {url, mid} = e.target.dataset
-        this.data.msgView[mid] = this.data.msgView[mid] || {}
-        this.data.msgView[mid].isPlay = false;
-        this.setData({
-            msgView: this.data.msgView
-        })
-        wx.stopVoice()
-    },
-    playRecord: function (e) {
-        let {url, mid} = e.target.dataset
-        this.data.msgView[mid] = this.data.msgView[mid] || {}
-
-        // reset all plays
-        for (let v in this.data.msgView) {
-            this.data.msgView[v] = this.data.msgView && (this.data.msgView[v] || {})
-            this.data.msgView[v].isPlay = false
-        }
-
-        // is play then stop
-        if (this.data.msgView[mid].isPlay) {
-            this.stopRecord(e)
-            return;
-        }
-
-        console.log(url, mid)
-        this.data.msgView[mid].isPlay = true;
-        this.setData({
-            msgView: this.data.msgView
-        })
-
-        wx.downloadFile({
-            url: url,
-            success: function (res) {
-                wx.playVoice({
-                    filePath: res.tempFilePath,
-                    complete: function () {
-                        this.stopRecord(e)
-                    }.bind(this)
-                })
-            }.bind(this),
-            fail: function (err) {
-            },
-            complete: function complete() {
-            }
-        })
-    },
-    uploadRecord: function (tempFilePath) {
-        var str = WebIM.config.appkey.split('#')
-        var that = this
-        wx.uploadFile({
-            url: 'https://a1.easemob.com/' + str[0] + '/' + str[1] + '/chatfiles',
-            filePath: tempFilePath,
-            name: 'file',
-            header: {
-                'Content-Type': 'multipart/form-data'
-            },
-            success: function (res) {
-                // return;
-
-                // 发送xmpp消息
-                var msg = new WebIM.message('audio', WebIM.conn.getUniqueId())
-                var data = res.data
-                var dataObj = JSON.parse(data)
-                var file = {
-                    type: 'audio',
-                    'url': dataObj.uri + '/' + dataObj.entities[0].uuid,
-                    'filetype': '',
-                    'filename': tempFilePath
-                }
-                var option = {
-                    apiUrl: WebIM.config.apiURL,
-                    body: file,
-                    to: that.data.yourname,                  // 接收消息对象
-                    roomType: false,
-                    chatType: 'singleChat'
-                }
-                msg.set(option)
-                WebIM.conn.send(msg.body)
-                // 本地消息展示
-                var time = WebIM.time()
-                var msgData = {
-                    info: {
-                        to: msg.body.to
-                    },
-                    username: that.data.myName,
-                    yourname: msg.body.to,
-                    msg: {
-                        type: msg.type,
-                        data: msg.body.body.url,
-                        url: msg.body.body.url,
-                    },
-                    style: 'self',
-                    time: time,
-                    mid: msg.id
-                }
-                that.data.chatMsg.push(msgData)
-                console.log(that.data.chatMsg)
-                // 存储到本地消息
-                var myName = wx.getStorageSync('myUsername')
-                wx.setStorage({
-                    key: that.data.yourname + myName,
-                    data: that.data.chatMsg,
-                    success: function () {
-                        //console.log('success', that.data)
-                        that.setData({
-                            chatMsg: that.data.chatMsg
-                        })
-                        setTimeout(function () {
-
-                            that.setData({
-                                toView: that.data.chatMsg[that.data.chatMsg.length - 1].mid
-                            })
-                        }, 10)
-                    }
-                })
-            }
-        })
-    },
-    //***************** 录音 end ***************************
     sendMessage: function () {
-
+      
         if (!this.data.userMessage.trim()) return;
         var that = this
         // //console.log(that.data.sendInfo)
         var myName = that.data.myName
-        var id = WebIM.conn.getUniqueId();
+        var id = WebIM.conn.getUniqueId();       
         var msg = new WebIM.message('txt', id);
         msg.set({
             msg: that.data.sendInfo,
             to: that.data.yourname,
             roomType: false,
             success: function (id, serverMsgId) {
-                console.log('success')
+                console.log(123)
+            }, 
+            fail: function (e) {
+              console.log(321);
             }
         });
-        // //console.log(msg)
         msg.body.chatType = 'singleChat';
         WebIM.conn.send(msg.body);
         if (msg) {
@@ -311,8 +134,9 @@ Page({
                 time: time,
                 mid: msg.id
             }
+            
             that.data.chatMsg.push(msgData)
-            // console.log(that.data.chatMsg)
+             console.log(that.data.chatMsg)
 
             wx.setStorage({
                 key: that.data.yourname + myName,
@@ -331,6 +155,7 @@ Page({
                     }, 100)
                 }
             })
+            
             that.setData({
                 userMessage: ''
             })
@@ -338,9 +163,10 @@ Page({
     },
 
     receiveMsg: function (msg, type) {
+      console.log(123)
         var that = this
-        var myName = wx.getStorageSync('myUsername')
-        if (msg.from == that.data.yourname || msg.to == that.data.yourname) {
+        var myName = that.data.myName
+        if (msg.from == that.data.yourname || msg.to == that.data.myName) {
             if (type == 'txt') {
                 var value = WebIM.parseEmoji(msg.data.replace(/\n/mg, ''))
             } else if (type == 'emoji') {
@@ -404,8 +230,8 @@ Page({
                 console.log('Download');
                 wx.downloadFile(options);
             }
-            //console.log(msg)
-            //console.log(value)
+            console.log(msg)
+            console.log(value)
             var time = WebIM.time()
             var msgData = {
                 info: {
@@ -431,7 +257,7 @@ Page({
                 msgData.style = 'self'
                 msgData.username = msg.to
             }
-            //console.log(msgData, that.data.chatMsg, that.data)
+            console.log(msgData, that.data.chatMsg, that.data)
             that.data.chatMsg.push(msgData)
             wx.setStorage({
                 key: that.data.yourname + myName,
@@ -439,7 +265,7 @@ Page({
                 success: function () {
                     if(type == 'audio')
                         return;
-                    //console.log('success', that.data)
+                    console.log('success', that.data)
                     that.setData({
                         chatMsg: that.data.chatMsg,
                     })

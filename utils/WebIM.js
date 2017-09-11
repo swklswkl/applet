@@ -96,7 +96,6 @@ WebIM.parseEmoji = function (msg) {
                 objList.push(obj)
             }
         }
-        console.log(objList)
         return objList;
     }
 }
@@ -219,7 +218,7 @@ WebIM.conn = new WebIM.connection({
     https: typeof WebIM.config.https === 'boolean' ? WebIM.config.https : location.protocol === 'https:',
     url: WebIM.config.xmppURL,
     apiUrl: WebIM.config.apiURL,
-    isAutoLogin: false,
+    isAutoLogin: true,
     heartBeatWait: WebIM.config.heartBeatWait,
     autoReconnectNumMax: WebIM.config.autoReconnectNumMax,
     autoReconnectInterval: WebIM.config.autoReconnectInterval
