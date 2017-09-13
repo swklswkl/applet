@@ -47,36 +47,19 @@ Page({
             yourname: options.hx_service_id,
             myName: myName,
             inputMessage: '',
-            chatMsg: wx.getStorageSync(options.your + myName) || []
+            chatMsg: wx.getStorageSync(options.hx_service_id + myName) || []
         })
         wx.setNavigationBarTitle({
             title: '客服'
         })
-        //创建连接
-        var conn = new WebIM.connection({
-          https: WebIM.config.https,
-          url: WebIM.config.xmppURL,
-          isAutoLogin: WebIM.config.isAutoLogin,
-          isMultiLoginSessions: WebIM.config.isMultiLoginSessions
-        });
         //登录
         var options = {
           apiUrl: WebIM.config.apiURL,
           user: that.data.myName,
           pwd: that.data.myName,
-          appKey: WebIM.config.appkey,
-          success: function (token) {
-            var token = token.access_token;
-            var options = {
-              apiUrl: WebIM.config.apiURL,
-              user: that.data.myName,
-              accessToken: token,
-              appKey: WebIM.config.appkey
-            };
-          },
-        };
-        
-        conn.open(options);
+          appKey: WebIM.config.appkey
+        };        
+        WebIM.conn.open(options);
     },
     onShow: function () {
         var that = this
@@ -96,8 +79,7 @@ Page({
         }
         that.setData(setUserMessage)
     },
-    sendMessage: function () {
-      
+    sendMessage: function () {      
         if (!this.data.userMessage.trim()) return;
         var that = this
         // //console.log(that.data.sendInfo)
@@ -109,11 +91,8 @@ Page({
             to: that.data.yourname,
             roomType: false,
             success: function (id, serverMsgId) {
-                console.log(123)
-            }, 
-            fail: function (e) {
-              console.log(321);
-            }
+                
+            }         
         });
         msg.body.chatType = 'singleChat';
         WebIM.conn.send(msg.body);
@@ -133,11 +112,8 @@ Page({
                 style: 'self',
                 time: time,
                 mid: msg.id
-            }
-            
-            that.data.chatMsg.push(msgData)
-             console.log(that.data.chatMsg)
-
+            }           
+            that.data.chatMsg.push(msgData)         
             wx.setStorage({
                 key: that.data.yourname + myName,
                 data: that.data.chatMsg,
@@ -163,7 +139,6 @@ Page({
     },
 
     receiveMsg: function (msg, type) {
-      console.log(123)
         var that = this
         var myName = that.data.myName
         if (msg.from == that.data.yourname || msg.to == that.data.myName) {
@@ -173,9 +148,9 @@ Page({
                 var value = msg.data
             } else if(type == 'audio'){
                 // 如果是音频则请求服务器转码
-                console.log('Audio Audio msg: ', msg);
+               
                 var token = msg.accessToken;
-                console.log('get token: ', token)
+                
                 var options = {
                     url: msg.url,
                     header: {
@@ -230,8 +205,7 @@ Page({
                 console.log('Download');
                 wx.downloadFile(options);
             }
-            console.log(msg)
-            console.log(value)
+           
             var time = WebIM.time()
             var msgData = {
                 info: {
@@ -249,7 +223,7 @@ Page({
                 time: time,
                 mid: msg.type + msg.id
             }
-            console.log('Audio Audio msgData: ', msgData);
+           
             if (msg.from == that.data.yourname) {
                 msgData.style = ''
                 msgData.username = msg.from
@@ -257,7 +231,7 @@ Page({
                 msgData.style = 'self'
                 msgData.username = msg.to
             }
-            console.log(msgData, that.data.chatMsg, that.data)
+            
             that.data.chatMsg.push(msgData)
             wx.setStorage({
                 key: that.data.yourname + myName,
@@ -265,7 +239,6 @@ Page({
                 success: function () {
                     if(type == 'audio')
                         return;
-                    console.log('success', that.data)
                     that.setData({
                         chatMsg: that.data.chatMsg,
                     })
@@ -276,6 +249,7 @@ Page({
                     }, 100)
                 }
             })
+           
         }
     },
     openEmoji: function () {
@@ -308,14 +282,15 @@ Page({
     sendImage: function () {
         var that = this
         var pages = getCurrentPages()
-        pages[1].cancelEmoji()
+        console.log(pages)
+        that.cancelEmoji()
         wx.chooseImage({
             count: 1,
             sizeType: ['original', 'compressed'],
             sourceType: ['album'],
             success: function (res) {
-                if (pages[1]) {
-                    pages[1].upLoadImage(res, that)
+              if (that) {
+                  that.upLoadImage(res, that)
                 }
             }
         })
@@ -546,15 +521,13 @@ receiveVideo: function (msg, type) {
     openCamera: function () {
         var that = this
         var pages = getCurrentPages()
-        pages[1].cancelEmoji()
+        that.cancelEmoji()
         wx.chooseImage({
             count: 1,
             sizeType: ['original', 'compressed'],
             sourceType: ['camera'],
             success: function (res) {
-                if (pages[1]) {
-                    pages[1].upLoadImage(res, that)
-                }
+              that.upLoadImage(res, that)               
             }
         })
     },

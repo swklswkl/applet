@@ -27,13 +27,10 @@ Page({
   //点击修改密码
   tapchangepwd:function(){
     var that = this
-    if (!that.data.cacheUserinfo){
-      app.isLogin()
-    }else{
-      wx.navigateTo({
-        url: '/pages/changepassword/changepassword'
-      })
-    }
+    wx.navigateTo({
+      url: '/pages/changepassword/changepassword'
+    })
+    
   },
   //点击我的咨询
   tapmyadvis: function () {

@@ -62,7 +62,7 @@ Page({
       method: 'post',
       success: function (res) {      
         //登录成功
-        if (res.data.code == 0) {
+        if (res.data.code == '0') {
           //设置用户信息缓存数据          
             wx.setStorageSync('userInfo', {
               customer_id: res.data.data.customer_id,
@@ -87,6 +87,7 @@ Page({
             }
           })
         } else {
+          console.log(res);
           wx.showToast({
             title: res.data.msg,
             image: '/image/icon/failure.png',

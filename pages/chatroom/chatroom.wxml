@@ -76,10 +76,6 @@
             <view class="open_camera" bindtap="openCamera">
                 <image src="../../images/iconCamera@2x.png" style="width: 26px;"/>
             </view>
-            <view class="v-record" bindtap="toggleRecordModal">
-                <image class="icon-record"
-                       src="{{recordStatus != RecordStatus.HIDE ? '../../images/iconAudioActive@2x.png' : '../../images/iconAudio@2x.png'}}"/>
-            </view>
             <view class="send_image" bindtap="sendLocation">
                 <image src="../../images/iconLocation@2x.png" style="height: 18px;"/>
             </view>

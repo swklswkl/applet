@@ -225,10 +225,10 @@ WebIM.conn = new WebIM.connection({
 });
 
 
-// async response
-// WebIM.conn.listen({
-//   onOpened: () => dispatch({type: Types.ON_OPEND})
-// })
+//async response
+WebIM.conn.listen({
+  onOpened: () => dispatch({type: Types.ON_OPEND})
+})
 
 // export default WebIM;
 module.exports = {

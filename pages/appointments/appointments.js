@@ -64,7 +64,7 @@ Page({
             }
           })
         } else {
-          if (userInfo == null) {
+          if (!userInfo) {
             app.isLogin()
           }
         }

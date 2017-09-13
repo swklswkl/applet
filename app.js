@@ -3,15 +3,25 @@ require('./utils/strophe.js')
 var WebIM = require('./utils/WebIM.js').default
 var hash = new require("./utils/md5.js");//引用MD5文件
 App({
+  getRoomPage: function () {
+    return this.getPage("pages/chatroom/chatroom")
+  },
+  getPage: function (pageName) {
+    var pages = getCurrentPages()
+    return pages.find(function (page) {
+      return page.__route__ == pageName
+    })
+  },
   onLaunch: function() {
     //调用API从本地缓存中获取数据
+    var that = this
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     WebIM.conn.listen({
-      onOpened: function (message) {
-        WebIM.conn.setPresence()
-      },
+      // onOpened: function (message) {
+      //   WebIM.conn.setPresence()
+      // },
       onPresence: function (message) {
         switch (message.type) {
           case "unsubscribe":
@@ -80,10 +90,10 @@ App({
           }
         }
       },
-
       onAudioMessage: function (message) {
         console.log('onAudioMessage', message)
-        var page = that.getRoomPage()
+        var that = this
+        var page = that.getPage()
         console.log(page)
         if (message) {
           if (page) {
@@ -120,15 +130,13 @@ App({
           }
         }
       },
-
       onLocationMessage: function (message) {
         console.log("Location message: ", message);
       },
-
       onTextMessage: function (message) {
+        //console.log(message)     
         var page = that.getRoomPage()
-        console.log(page)
-        if (message) {
+        if (message) {         
           if (page) {
             page.receiveMsg(message, 'txt')
           } else {
@@ -163,7 +171,7 @@ App({
         }
       },
       onEmojiMessage: function (message) {
-        //console.log('onEmojiMessage',message)
+        console.log('onEmojiMessage',message)
         var page = that.getRoomPage()
         //console.log(pages)
         if (message) {
@@ -202,7 +210,6 @@ App({
         }
       },
       onPictureMessage: function (message) {
-        //console.log('Picture',message);
         var page = that.getRoomPage()
         if (message) {
           if (page) {
@@ -339,6 +346,9 @@ App({
         }, 1500)
       }
     })
+  },
+  firstupword:function(str){   
+    return str.charAt(0).toUpperCase()+str.slice(1);
   }
  
 })

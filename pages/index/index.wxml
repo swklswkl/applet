@@ -85,7 +85,7 @@
   </view>
   <block wx:for="{{clinic}}" wx:key="clinic_id">
     <view class="near_clinics_content" bindtap="tapnearclinic" data-clinic_id="{{item.clinic_id}}">
-      <image class="clinic_image" src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}"></image>
+      <image class="clinic_image" src="{{'http://www.yyaai.com/uploads/clinic/'+item.clinicLogo}}" alt="图片XX"></image>
       <view class="clinic_right">
        <view class="clinic_name"><text class="text1">{{item.clinic_name}}</text><text class="text2">{{item.distance}}\n</text></view>
        <view class="starsmaller">
