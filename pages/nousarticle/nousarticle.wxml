@@ -1,3 +1,16 @@
 <!--nousarticle.wxml-->
-<rich-text nodes="{{content}}" />
+<view id="doctor_main">
+    <view id="doctor_matcn" class="doctor_bgfff">
+        <view class="doctorus_idmnhdbm"></view>
+        <view class="doctorus_idxm">
+            <view style="text-align: center;margin-top:10px;font-weight:900;">{{data.title}}</view>
+            <view style="text-align: center;margin-top:10px;">作者：{{data.author}}</view>
+            <view style="text-align: center;margin-top:10px;color:#9c9c9c">{{data.create_time}}</view>
+            <view style="margin:1rem;">
+                <rich-text nodes="{{data.content}}" />
+            </view>
+        </view>
+    </view>
+</view>
+
 

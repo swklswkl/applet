@@ -818,14 +818,14 @@ connection.prototype.open = function (options) {
             timestamp: +new Date()
         };
         var loginfo = _utils.stringify(loginJson);
-        console.log(loginfo)
+        //console.log(loginfo)
         var options = {
             url: apiUrl + '/' + orgName + '/' + appName + '/token',
             data: loginfo,
             success: suc || _utils.emptyfn,
             error: error || _utils.emptyfn
         };
-        console.log("options", options.success)
+        //console.log("options", options.success)
         _utils.ajax(options);
     }
 

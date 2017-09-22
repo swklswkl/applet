@@ -1,0 +1,2 @@
+/* correctReport.wxss */
+.start{text-align: center; line-height: 100vh; font-size: 1rem;}

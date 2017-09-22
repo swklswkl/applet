@@ -33,7 +33,7 @@
     <text>个人简介</text>
   </view>
   <view class="profile-content">
-    <text>{{aboutme}}</text>
+    <rich-text nodes="{{aboutme}}" />
   </view>
 </view>
 <!--个人简介end-->

@@ -5,8 +5,8 @@ var myWebsite = app.globalData.myWebsite;
 Page({
   data: {
     userInfo: {},
-    imgPath: 'https://www.eeboo.cn/uploads/',
-    iconPath: 'http://www.yyaai.com/uploads/icons/',
+    imgPath: 'https://yyaai.com/uploads/',
+    iconPath: 'https://yyaai.com/uploads/icons/',
     address: "",
     //分页数据
     page: 0,
@@ -53,6 +53,11 @@ Page({
     var clinic_id = e.currentTarget.dataset.clinic_id
     wx.navigateTo({
       url: '/pages/clinics/clinics?clinic_id=' + clinic_id,
+    })
+  },
+  correctReport:function(){
+    wx.navigateTo({
+      url: '/pages/correctReport/correctReport'
     })
   },
   expertsay: function () {
@@ -112,6 +117,7 @@ Page({
           success: function (res) {
             if (res.statusCode == 200) {
               var list = res.data.data.clinic
+              console.log(res.data.data)
               for (var i in list) {
                 list[i]['distance'] = (list[i]['distance'] / 1000).toFixed(1) + "km"
               }

@@ -10,7 +10,7 @@
 </view>
 <view class="title">{{article.title}}</view>
 <image class="article_image" wx:if="{{article.pic}}" src="{{article.pic}}"></image>
-<view class="article">{{article.content}}</view>
+<view class="article"><rich-text nodes="{{article.content}}" /></view>
 <view class="article_bottom">
 <view class="jieshi">文章来自{{article.name}}</view>
 <view class="jieshi">最终解释权归作者所有</view>

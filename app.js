@@ -305,7 +305,7 @@ App({
 
   globalData: {
     userInfo: null,
-    myWebsite:'https://www.eeboo.cn/',
+    myWebsite:'https://yyaai.com/',
 
   },
   //接口加密

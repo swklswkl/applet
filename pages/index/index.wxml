@@ -55,7 +55,7 @@
 <!--十个小图标-->
 <view class="content_main">
   <!--牙齿矫正报告-->
-  <view class="content_main_left" bindtap="">
+  <view class="content_main_left" bindtap="correctReport">
     <text class="content_title">牙齿矫正报告\n</text> 
     <text class="description">权威专业团队一同探索</text>
     <image src="/image/team.png"></image>

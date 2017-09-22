@@ -24,7 +24,8 @@
     "pages/regist/regist",
     "pages/success/success",
     "pages/appointments/appointments",
-    "pages/chatroom/chatroom"
+    "pages/chatroom/chatroom",
+    "pages/correctReport/correctReport"
   ],
   "window": {
     "backgroundTextStyle": "dark",

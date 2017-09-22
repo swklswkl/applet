@@ -31,7 +31,6 @@ Page({
       },
       method: 'post',
       success: function (res) {
-        console.log(res.data.data)
         if (res.data.code == 0) {
           that.setData({
             clinicDetails: res.data.data
