@@ -13,6 +13,9 @@ Page({
     avatarUrl1: '',
     avatarUrl2: '',
     avatarUrl3: '',
+    pic1:'',
+    pic2: '',
+    pic3: '',
     tag1:'block',
     tag2:'none',
     toast1Hidden: true,
@@ -47,6 +50,10 @@ Page({
           success: function (res) {
             var data = JSON.parse(res.data)
             //console.log(data.data)
+            that.setData({
+              //将临时变量赋值给已经在data中定义好的变量
+              pic1: data.data
+            })
           }
         })
       },
@@ -82,6 +89,10 @@ Page({
           name: 'file',
           success: function (res) {
             var data = JSON.parse(res.data)
+            that.setData({
+              //将临时变量赋值给已经在data中定义好的变量
+              pic2: data.data
+            })
           }
         })
       },
@@ -117,7 +128,11 @@ Page({
           name: 'file',
           success: function (res) {
             var data = JSON.parse(res.data)
-            console.log(data.data)
+            //console.log(data.data)
+            that.setData({
+              //将临时变量赋值给已经在data中定义好的变量
+              pic3: data.data
+            })
           }
         })
       },
@@ -213,6 +228,7 @@ Page({
   },
   formSubmit: function (e) {
     var that = this;
+    console.log(e.detail.value);
     if (this.data.user == ''){
       app.isLogin()
     }else{
@@ -229,9 +245,9 @@ Page({
                     tag_id: e.detail.value.tag_id,
                     open: e.detail.value.open,
                     content: contents,
-                    photo1: that.data.avatarUrl1,
-                    photo2: that.data.avatarUrl2,
-                    photo3: that.data.avatarUrl3,
+                    photo1: e.detail.value.pic1,
+                    photo2: e.detail.value.pic2,
+                    photo3: e.detail.value.pic3,
               }
               //调用全局加密方法
               var formData = app.mdkey(advisory);
@@ -255,6 +271,9 @@ Page({
                               i2: 'none',
                               p3: 'block',
                               i3: 'none',
+                              pic1: '',
+                              pic2: '',
+                              pic3: '',
                               contents:'',
                               tag1: 'block',
                               tag2: 'none'

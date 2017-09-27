@@ -117,7 +117,6 @@ Page({
           success: function (res) {
             if (res.statusCode == 200) {
               var list = res.data.data.clinic
-              console.log(res.data.data)
               for (var i in list) {
                 list[i]['distance'] = (list[i]['distance'] / 1000).toFixed(1) + "km"
               }
@@ -175,30 +174,32 @@ Page({
   },
   //下拉刷新
   onPullDownRefresh: function () {
+    
     var that = this
     this.setData({
       page: 0,
       hiddenLoading: false
     });
-    that.nearClinicList()
-    //请求首页接口
-    wx.request({
-      url: myWebsite + 'appNewCustomer/Index/index',
-      header: {
-        'Accept': 'application/json'
-      },
-      success: function (res) {
-        if (res.statusCode == 200) {
-          var Data = res.data.data;
-          //console.log(Data)
-          that.setData({
-            indexInfo: Data,
+    that.onLoad();
+    // that.nearClinicList()
+    // //请求首页接口
+    // wx.request({
+    //   url: myWebsite + 'appNewCustomer/Index/index',
+    //   header: {
+    //     'Accept': 'application/json'
+    //   },
+    //   success: function (res) {
+    //     if (res.statusCode == 200) {
+    //       var Data = res.data.data;
+    //       //console.log(Data)
+    //       that.setData({
+    //         indexInfo: Data,
 
-          })
+    //       })
 
-        }
-      }
-    });
+    //     }
+    //   }
+    // });
   },
   //上拉加载
   onReachBottom: function () {

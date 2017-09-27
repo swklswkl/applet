@@ -80,8 +80,8 @@ Page({
             title: res.data.msg,
             success: function (res) {
               setTimeout(function () {
-                wx.navigateBack({
-                  delta: 1
+                wx.switchTab({
+                  url: '/pages/index/index',
                 })
               }, 1500)
             }

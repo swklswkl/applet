@@ -21,16 +21,10 @@ Page({
       url: '/pages/doctors/doctors?doctor_id=' + doctor_id + '&name=' + name
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    var that = this;
-    that.setData({
-      title:options.title
-    })
+  doctorList: function () {
+    var that = this
     var tenicon = {
-      tag_id: options.id,
+      tag_id: that.data.icon_id,
       page: that.data.pageSize,
       start: that.data.page
     }
@@ -43,7 +37,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: 'post',
-      success: function(res) {
+      success: function (res) {
         if (res.statusCode == 200) {
           var list = res.data.data.list
           var contentlistTem = that.data.contentlist
@@ -68,7 +62,18 @@ Page({
       }
     })
   },
-
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this;
+    that.setData({
+      icon_id: options.id,
+      title:options.title
+    });
+    that.doctorList();
+  },
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -108,6 +113,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    this.setData({
+      hiddenLoading: false
+    });
+    if (this.data.hasMoreData) {
+      this.doctorList()
+    } 
   },
 
   /**

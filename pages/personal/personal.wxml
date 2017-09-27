@@ -10,27 +10,37 @@
     </view>
   </view>
 </view>
-  <view class="personal-line" bindtap="tapchangepwd">
-    <image class="pLineIcon" src="../../image/icon/person_password.png"></image>
-    <view class="pLineTitle">修改密码</view>
-    <image class="arrow" src="../../image/icon/next.png"></image>
+<view class="personal-line" bindtap="tapchangepwd">
+  <image class="pLineIcon" src="../../image/icon/person_password.png"></image>
+  <view class="pLineTitle">修改密码</view>
+  <image class="arrow" src="../../image/icon/next.png"></image>
+</view>
+<view class="personal-line line-wrap" bindtap="tapmyadvis">
+
+  <image class="pLineIcon" src="../../image/icon/person_advisory.png"></image>
+  <view class="pLineTitle">我的咨询记录</view>
+  <image class="arrow" src="../../image/icon/next.png"></image>
+</view>
+<view class="personal-line line-wrap" bindtap="tapappint">
+  <image class="pLineIcon" src="../../image/icon/person_appintment.png"></image>
+  <view class="pLineTitle">我的预约历史</view>
+  <image class="arrow" src="../../image/icon/next.png"></image>
+</view>
+<view class="personal-line line-wrap" bindtap="tapfeedback">
+  <image class="pLineIcon" src="../../image/icon/person_feedback.png"></image>
+  <view class="pLineTitle">意见反馈</view>
+  <image class="arrow" src="../../image/icon/next.png"></image>
+</view>
+<!--退出登录/登录按钮-->
+<view class="" wx:if="{{cacheUserinfo.nickName}}">
+  <view class="personal-line logout-wrap" style="height: 150px;position:relative;">
+    <button bindtap="exitLogin" class="logout-button" style="position:absolute;bottom: 10px;width:80%;margin: 5px 8%;">退出登录</button>
   </view>
-  <view class="personal-line line-wrap" bindtap="tapmyadvis">
-  
-    <image class="pLineIcon" src="../../image/icon/person_advisory.png"></image>
-    <view class="pLineTitle">我的咨询记录</view>
-    <image class="arrow" src="../../image/icon/next.png"></image>
-  </view>
-  <view class="personal-line line-wrap" bindtap="tapappint">
-    <image class="pLineIcon" src="../../image/icon/person_appintment.png"></image>
-    <view class="pLineTitle">我的预约历史</view>
-    <image class="arrow" src="../../image/icon/next.png"></image>
-  </view>
-  <view class="personal-line line-wrap" bindtap="tapfeedback">
-    <image class="pLineIcon" src="../../image/icon/person_feedback.png"></image>
-    <view class="pLineTitle">意见反馈</view>
-    <image class="arrow" src="../../image/icon/next.png"></image>
-  </view>
-<view class="personal-line logout-wrap" style="height: 150px;position:relative;">
-  <button bindtap="exitLogin" class="logout-button" style="position:absolute;bottom: 10px;width:80%;margin: 5px 8%;">退出登录</button>
+</view>
+<view class="" wx:else>
+  <navigator url="/pages/login/login">
+    <view class="personal-line logout-wrap" style="height: 150px;position:relative;">
+      <button class="logout-button" style="position:absolute;bottom: 10px;width:80%;margin: 5px 8%;">登录</button>
+    </view>
+  </navigator>
 </view>

@@ -25,6 +25,9 @@
           <view class="section__title a">咨询问题</view>
           <textarea placeholder="请简单的描述下症状" placeholder-class value="{{contents}}" name="content"/>
           <view class="addpic">添加照片</view>
+          <input type="hidden" style="display:none" name="pic1" value="{{pic1}}"/>
+          <input type="hidden" style="display:none" name="pic2" value="{{pic2}}"/>
+          <input type="hidden" style="display:none" name="pic3" value="{{pic3}}"/>
             <view class="p1">
               <button bindtap="bindViewTap1" style="display:{{p1}};"></button>
             </view>

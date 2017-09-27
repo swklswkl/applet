@@ -6,8 +6,8 @@
 .input-box input.qcode{width: 50vw;float:left;}
 .input-placeholder{color: #cccccc;}
 .button{width:90vw;margin-left:5vw;}
-.button button{background-color: #4aadfd; font-weight: blod; text-shadow:2px 2px 3px #fff;color: #fff;box-shadow:2px 2px 5px #4aadfd; }
-.title{font-weight:bold;width: 100%;text-shadow:2px 2px 5px #000;height: 10vw;padding:3vw 0;line-height: 10vw;  text-align: center}
+.button button{background-color: #4aadfd; font-weight: blod; color: #fff;box-shadow:2px 2px 5px #4aadfd; }
+.title{font-weight:bold;width: 100%;height: 10vw;padding:3vw 0;line-height: 10vw;  text-align: center}
 .rember{width: 100%;height: 10vw;padding:3vw 0;line-height: 10vw; font-size: 0.8rem;}
 .rember_left{float: left;color: #666666;}
 .rember_right{float: right;color: #fd080d;}
